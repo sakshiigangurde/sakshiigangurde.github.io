@@ -1,5 +1,5 @@
 import { motion } from 'motion/react';
-import { Calendar, Filter, User, Zap, LayoutGrid } from 'lucide-react';
+import { Calendar, User, Zap, LayoutGrid } from 'lucide-react';
 
 export function Solutions() {
     const solutions = [

@@ -1,9 +1,9 @@
 import { motion } from "motion/react";
-import { 
-  Building2, Globe, Lock, AlertTriangle, X, 
-  Search, Target, Users, CreditCard, Wrench, Package, 
-  Sparkles, Users2, Activity, Check, CheckCircle, TrendingUp, Zap,
-  Lightbulb, Sliders, BarChart3, LayoutDashboard, ArrowDown
+import {
+  Building2, Globe, Lock, AlertTriangle, X,
+  Search, Target, Users, CreditCard, Wrench, Package,
+  Sparkles, Activity, Check, CheckCircle, TrendingUp, Zap,
+  Lightbulb
 } from "lucide-react";
 
 
@@ -62,7 +62,7 @@ export function PlatformContext() {
               <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-blue-500/20 to-cyan-500/20 flex items-center justify-center mb-8 group-hover:scale-110 transition-transform">
                 <Globe className="w-8 h-8 text-blue-400" />
               </div>
-              
+
               <h3 className="text-3xl font-bold text-white mb-4">Pre-login</h3>
               <p className="text-xl text-gray-500 mb-6">Website</p>
               <p className="text-gray-400 text-lg leading-relaxed">
@@ -84,11 +84,11 @@ export function PlatformContext() {
               <div className="absolute -top-4 -right-4 px-6 py-2 bg-gradient-to-r from-indigo-500 to-blue-500 rounded-full text-sm font-semibold text-white shadow-lg">
                 Our Focus
               </div>
-              
+
               <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-indigo-500/30 to-blue-500/30 flex items-center justify-center mb-8 group-hover:scale-110 transition-transform">
                 <Lock className="w-8 h-8 text-indigo-400" />
               </div>
-              
+
               <h3 className="text-3xl font-bold text-white mb-4">Post-login</h3>
               <p className="text-xl text-indigo-400 mb-6">Selfcare Portal</p>
               <p className="text-gray-300 text-lg leading-relaxed mb-6">
@@ -402,11 +402,10 @@ export function ResearchInsights() {
             >
               <div className="relative bg-gradient-to-br from-white/10 to-white/[0.02] border border-white/10 rounded-3xl p-8 h-full hover:border-indigo-400/30 transition-all duration-500 hover:scale-105">
                 {/* Priority badge */}
-                <div className={`absolute -top-3 -right-3 px-4 py-1.5 rounded-full text-xs font-semibold ${
-                  action.priority === 'High' 
-                    ? 'bg-gradient-to-r from-indigo-500 to-blue-500' 
-                    : 'bg-gradient-to-r from-blue-600 to-cyan-600'
-                } text-white shadow-lg`}>
+                <div className={`absolute -top-3 -right-3 px-4 py-1.5 rounded-full text-xs font-semibold ${action.priority === 'High'
+                  ? 'bg-gradient-to-r from-indigo-500 to-blue-500'
+                  : 'bg-gradient-to-r from-blue-600 to-cyan-600'
+                  } text-white shadow-lg`}>
                   {action.priority} Priority
                 </div>
 
@@ -952,18 +951,6 @@ export function Learnings3() {
     }
   ];
 
-  const futureIdeas = [
-    {
-      icon: Sliders,
-      title: "Customizable Widgets",
-      description: "Allow users to choose which widgets to pin and reorder them based on their preferences"
-    },
-    {
-      icon: BarChart3,
-      title: "Data Visualization",
-      description: "Add usage insights and trends across services with interactive charts and graphs"
-    }
-  ];
 
   return (
     <section className="relative py-32 px-6 lg:px-16 overflow-hidden">
