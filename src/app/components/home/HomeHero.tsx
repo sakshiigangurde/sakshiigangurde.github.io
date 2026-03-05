@@ -76,9 +76,9 @@ export function HomeHero({ onViewWork }: HomeHeroProps) {
                         initial={{ opacity: 0, y: 30 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.9, delay: 0.4 }}
-                        className="text-6xl md:text-8xl lg:text-9xl font-bold tracking-tight leading-[1.05] relative overflow-visible pb-3"
+                        className="text-6xl md:text-8xl lg:text-9xl font-bold tracking-tight leading-[1.2] lg:leading-[1.1] relative overflow-visible pb-4"
                     >
-                        <span className="relative inline-block w-full overflow-visible">
+                        <span className="relative inline-block w-full overflow-visible pb-2">
                             <AnimatePresence mode="wait">
                                 <motion.span
                                     key={roleIndex}
@@ -86,7 +86,7 @@ export function HomeHero({ onViewWork }: HomeHeroProps) {
                                     animate={{ opacity: 1, y: 0 }}
                                     exit={{ opacity: 0, y: -24 }}
                                     transition={{ duration: 0.5, ease: 'easeOut' }}
-                                    className={`bg-gradient-to-r ${roles[roleIndex].color} bg-clip-text text-transparent block`}
+                                    className={`bg-gradient-to-r ${roles[roleIndex].color} bg-clip-text text-transparent block pb-4`}
                                 >
                                     {roles[roleIndex].text}
                                 </motion.span>
@@ -129,18 +129,21 @@ export function HomeHero({ onViewWork }: HomeHeroProps) {
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8, delay: 1 }}
-                    className="flex items-center justify-center gap-10 flex-wrap mt-6"
+                    className="flex flex-col md:flex-row items-center justify-center gap-6 md:gap-10 mt-6"
                 >
                     {stats.map((stat, i) => (
-                        <div key={stat.label} className="flex items-center gap-10">
+                        <div key={stat.label} className="flex flex-col md:flex-row items-center gap-6 md:gap-10">
                             <div className="text-center">
-                                <p className={`text-4xl font-bold bg-gradient-to-r ${stat.gradient} bg-clip-text text-transparent mb-1`}>
+                                <p className={`text-3xl md:text-4xl font-bold bg-gradient-to-r ${stat.gradient} bg-clip-text text-transparent mb-1 md:mb-2`}>
                                     {stat.value}
                                 </p>
-                                <p className="text-xs text-gray-500 uppercase tracking-widest">{stat.label}</p>
+                                <p className="text-[11px] md:text-xs text-gray-500 uppercase tracking-widest">{stat.label}</p>
                             </div>
                             {i < stats.length - 1 && (
-                                <div className="h-10 w-px bg-gradient-to-b from-transparent via-white/15 to-transparent" />
+                                <>
+                                    <div className="hidden md:block h-10 w-px bg-gradient-to-b from-transparent via-white/15 to-transparent" />
+                                    <div className="block md:hidden w-24 h-px bg-gradient-to-r from-transparent via-white/15 to-transparent" />
+                                </>
                             )}
                         </div>
                     ))}

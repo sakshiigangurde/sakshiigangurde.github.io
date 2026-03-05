@@ -15,7 +15,7 @@ export interface Project {
     slug: string;
 }
 
-export const PROJECTS: Project[] = [
+const PROJECTS: Project[] = [
     {
         number: '01',
         title: 'LittleNest',

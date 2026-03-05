@@ -48,23 +48,11 @@ export function CinematicHero() {
                     className="relative mx-auto max-w-xs"
                 >
                     <div className="absolute inset-0 bg-gradient-to-t from-sky-400/30 via-pink-300/15 to-yellow-300/15 blur-3xl scale-110" />
-                    <div className="relative bg-gradient-to-br from-zinc-900 to-black rounded-[3rem] p-3 shadow-2xl shadow-sky-900/40 border border-white/10">
-                        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-28 h-7 bg-black rounded-b-3xl z-20" />
-                        <div className="relative bg-gradient-to-br from-green-50 via-sky-50 to-pink-50 rounded-[2.5rem] overflow-hidden aspect-[9/19.5]">
-                            <div className="absolute inset-0 flex items-center justify-center">
-                                <div className="text-center px-6">
-                                    <div className="w-16 h-16 mx-auto mb-5 rounded-3xl bg-gradient-to-br from-teal-400 via-sky-400 to-pink-400 shadow-lg" />
-                                    <div className="h-2.5 bg-gray-800/20 rounded-full w-28 mx-auto mb-2" />
-                                    <div className="h-2.5 bg-gray-800/10 rounded-full w-20 mx-auto mb-7" />
-                                    <div className="space-y-2.5">
-                                        <div className="h-14 bg-white/80 backdrop-blur rounded-2xl shadow-sm" />
-                                        <div className="h-14 bg-white/60 backdrop-blur rounded-2xl shadow-sm" />
-                                        <div className="h-14 bg-white/40 backdrop-blur rounded-2xl shadow-sm" />
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    <img
+                        src="/images/littlenest-booking-hero-mockup.png"
+                        alt="LittleNest App Welcome Screen"
+                        className="relative w-full h-auto z-10 drop-shadow-2xl"
+                    />
                 </motion.div>
 
                 <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 1, delay: 2 }} className="mt-16">

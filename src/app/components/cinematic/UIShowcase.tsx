@@ -123,85 +123,32 @@ export function UIShowcase() {
                                         />
 
                                         {/* Phone frame */}
-                                        <div className="relative bg-gradient-to-br from-zinc-900 to-black rounded-[3rem] p-3 shadow-2xl border border-white/10">
-                                            {/* Notch */}
-                                            <div className="absolute top-0 left-1/2 -translate-x-1/2 w-32 h-7 bg-black rounded-b-3xl z-20" />
-
-                                            {/* Screen content */}
-                                            <div
-                                                className={`relative bg-gradient-to-br ${screen.screenBg} rounded-[2.5rem] overflow-hidden aspect-[9/19.5]`}
-                                            >
-                                                <div className="absolute inset-0 p-6 flex flex-col pt-10">
-                                                    {/* Header */}
-                                                    <div className="flex items-center justify-between mb-6">
-                                                        <div
-                                                            className={`w-24 h-8 rounded-xl bg-gradient-to-r ${screen.gradient} opacity-80`}
-                                                        />
-                                                        <div className="w-10 h-10 rounded-full bg-white/80 backdrop-blur shadow" />
-                                                    </div>
-
-                                                    {/* Content area */}
-                                                    <div className="flex-1 space-y-3">
-                                                        {index === 0 && (
-                                                            <>
-                                                                <div
-                                                                    className={`h-12 bg-gradient-to-r ${screen.gradient} opacity-20 rounded-2xl`}
-                                                                />
-                                                                <div className="grid grid-cols-7 gap-1.5">
-                                                                    {[...Array(7)].map((_, i) => (
-                                                                        <div
-                                                                            key={i}
-                                                                            className="aspect-square bg-white/60 backdrop-blur rounded-lg"
-                                                                        />
-                                                                    ))}
-                                                                </div>
-                                                                <div className="space-y-2 mt-4">
-                                                                    <div className="h-16 bg-white/80 backdrop-blur rounded-2xl shadow-sm" />
-                                                                    <div className="h-16 bg-white/80 backdrop-blur rounded-2xl shadow-sm" />
-                                                                    <div className="h-16 bg-white/80 backdrop-blur rounded-2xl shadow-sm" />
-                                                                </div>
-                                                            </>
-                                                        )}
-                                                        {index === 1 && (
-                                                            <>
-                                                                <div
-                                                                    className={`h-32 bg-gradient-to-br ${screen.gradient} opacity-25 rounded-2xl`}
-                                                                />
-                                                                <div className="space-y-3 mt-4">
-                                                                    {[...Array(3)].map((_, i) => (
-                                                                        <div key={i} className="flex items-center gap-3">
-                                                                            <div className="w-8 h-8 bg-white/60 rounded-lg" />
-                                                                            <div className="h-3 bg-gray-800/10 rounded-full flex-1" />
-                                                                        </div>
-                                                                    ))}
-                                                                </div>
-                                                                <div
-                                                                    className={`mt-6 h-14 bg-gradient-to-r ${screen.gradient} rounded-2xl shadow-lg opacity-80`}
-                                                                />
-                                                            </>
-                                                        )}
-                                                        {index === 2 && (
-                                                            <>
-                                                                <div className="flex gap-2 mb-4">
-                                                                    <div
-                                                                        className={`h-10 px-4 bg-gradient-to-r ${screen.gradient} rounded-xl flex-1 opacity-80`}
-                                                                    />
-                                                                    <div className="h-10 px-4 bg-white/40 backdrop-blur rounded-xl flex-1" />
-                                                                </div>
-                                                                <div className="space-y-3">
-                                                                    {[...Array(3)].map((_, i) => (
-                                                                        <div
-                                                                            key={i}
-                                                                            className="h-20 bg-white/80 backdrop-blur rounded-2xl shadow-sm"
-                                                                        />
-                                                                    ))}
-                                                                </div>
-                                                            </>
-                                                        )}
-                                                    </div>
-                                                </div>
+                                        {/* Phone frame */}
+                                        {index === 0 ? (
+                                            <div className="relative mx-auto drop-shadow-2xl">
+                                                <img
+                                                    src="/images/littlenest-booking/littlenest-booking-ui-showcase-calendar-view.png"
+                                                    alt={screen.title}
+                                                    className="w-full h-auto object-contain"
+                                                />
                                             </div>
-                                        </div>
+                                        ) : index === 1 ? (
+                                            <div className="relative mx-auto drop-shadow-2xl">
+                                                <img
+                                                    src="/images/littlenest-booking/littlenest-booking-ui-showcase-class-details.png"
+                                                    alt={screen.title}
+                                                    className="w-full h-auto object-contain"
+                                                />
+                                            </div>
+                                        ) : (
+                                            <div className="relative mx-auto drop-shadow-2xl">
+                                                <img
+                                                    src="/images/littlenest-booking/littlenest-booking-ui-showcase-my-bookings.png"
+                                                    alt={screen.title}
+                                                    className="w-full h-auto object-contain"
+                                                />
+                                            </div>
+                                        )}
                                     </div>
                                 </motion.div>
                             </div>

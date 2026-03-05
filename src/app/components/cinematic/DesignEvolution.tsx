@@ -50,8 +50,8 @@ export function DesignEvolution() {
                         <button
                             onClick={() => setActiveView('before')}
                             className={`px-8 py-4 rounded-xl font-semibold transition-all duration-300 ${activeView === 'before'
-                                    ? 'bg-gradient-to-r from-gray-600 to-gray-700 text-white shadow-lg'
-                                    : 'text-gray-400 hover:text-white'
+                                ? 'bg-gradient-to-r from-gray-600 to-gray-700 text-white shadow-lg'
+                                : 'text-gray-400 hover:text-white'
                                 }`}
                         >
                             Lo-Fi Wireframes
@@ -59,8 +59,8 @@ export function DesignEvolution() {
                         <button
                             onClick={() => setActiveView('after')}
                             className={`px-8 py-4 rounded-xl font-semibold transition-all duration-300 ${activeView === 'after'
-                                    ? 'bg-gradient-to-r from-teal-400 via-sky-400 to-pink-400 text-white shadow-lg'
-                                    : 'text-gray-400 hover:text-white'
+                                ? 'bg-gradient-to-r from-teal-400 via-sky-400 to-pink-400 text-white shadow-lg'
+                                : 'text-gray-400 hover:text-white'
                                 }`}
                         >
                             Final Design
@@ -81,23 +81,13 @@ export function DesignEvolution() {
                                 transition={{ duration: 0.6, ease: 'easeInOut' }}
                                 className="w-full"
                             >
-                                <div className="rounded-3xl overflow-hidden border border-gray-700/50 shadow-2xl bg-gradient-to-br from-gray-800/50 to-gray-900/50 p-8">
-                                    {/* Wireframe mockup */}
-                                    <div className="grid grid-cols-3 gap-4">
-                                        {[...Array(3)].map((_, i) => (
-                                            <div key={i} className="aspect-[9/16] bg-gray-700/30 rounded-2xl overflow-hidden relative">
-                                                <div className="absolute inset-4 space-y-3">
-                                                    <div className="h-6 bg-gray-600/40 rounded" />
-                                                    <div className="h-3 bg-gray-600/30 rounded w-3/4" />
-                                                    <div className="h-3 bg-gray-600/20 rounded w-1/2" />
-                                                    <div className="h-20 bg-gray-600/30 rounded-lg mt-2" />
-                                                    <div className="h-16 bg-gray-600/25 rounded-lg" />
-                                                    <div className="h-16 bg-gray-600/20 rounded-lg" />
-                                                    <div className="h-10 bg-gray-600/40 rounded-xl mt-4" />
-                                                </div>
-                                            </div>
-                                        ))}
-                                    </div>
+                                <div className="rounded-[2.5rem] overflow-hidden border flex justify-center items-center border-gray-700/50 shadow-2xl bg-gradient-to-br from-gray-800/20 to-gray-900/20 p-2 md:p-6 lg:p-10">
+                                    {/* Wireframe Image */}
+                                    <img
+                                        src="/images/littlenest-booking/littlenest-booking-design-evolution-wireframes.png"
+                                        alt="Lo-Fi Wireframes"
+                                        className="w-full h-auto object-contain rounded-2xl"
+                                    />
                                 </div>
                                 <p className="text-center text-gray-500 mt-6 text-sm uppercase tracking-widest">
                                     Initial Concept
@@ -122,34 +112,17 @@ export function DesignEvolution() {
                                         transition={{ duration: 1.5, ease: 'easeOut' }}
                                     />
                                     <motion.div
-                                        className="relative rounded-3xl overflow-hidden border border-white/10 shadow-2xl bg-gradient-to-br from-teal-950/30 to-sky-950/30 p-8"
+                                        className="relative rounded-[2.5rem] overflow-hidden border border-white/10 shadow-2xl bg-gradient-to-br from-teal-950/20 to-sky-950/20 p-2 md:p-6 lg:p-10 flex justify-center items-center"
                                         initial={{ y: 20 }}
                                         animate={{ y: 0 }}
                                         transition={{ duration: 0.8, delay: 0.2 }}
                                     >
-                                        {/* Final design mockup */}
-                                        <div className="grid grid-cols-3 gap-4">
-                                            {[
-                                                { gradient: 'from-teal-400/20 to-sky-400/20', accent: 'from-teal-400 to-sky-400' },
-                                                { gradient: 'from-pink-400/20 to-purple-400/20', accent: 'from-pink-400 to-purple-400' },
-                                                { gradient: 'from-yellow-400/20 to-orange-400/20', accent: 'from-yellow-400 to-orange-400' },
-                                            ].map((screen, i) => (
-                                                <div
-                                                    key={i}
-                                                    className={`aspect-[9/16] bg-gradient-to-br ${screen.gradient} rounded-2xl overflow-hidden relative border border-white/10`}
-                                                >
-                                                    <div className="absolute inset-4 space-y-3">
-                                                        <div className={`h-8 bg-gradient-to-r ${screen.accent} rounded-xl opacity-80`} />
-                                                        <div className="h-3 bg-white/20 rounded w-3/4" />
-                                                        <div className="h-3 bg-white/10 rounded w-1/2" />
-                                                        <div className="h-20 bg-white/15 rounded-2xl mt-2 shadow-sm" />
-                                                        <div className="h-16 bg-white/12 rounded-2xl shadow-sm" />
-                                                        <div className="h-16 bg-white/10 rounded-2xl shadow-sm" />
-                                                        <div className={`h-12 bg-gradient-to-r ${screen.accent} rounded-2xl mt-4 shadow-lg opacity-90`} />
-                                                    </div>
-                                                </div>
-                                            ))}
-                                        </div>
+                                        {/* Final design Image */}
+                                        <img
+                                            src="/images/littlenest-booking/littlenest-booking-design-evolution-final.png"
+                                            alt="Final Design"
+                                            className="w-full h-auto object-contain rounded-2xl"
+                                        />
                                     </motion.div>
                                 </div>
                                 <motion.p

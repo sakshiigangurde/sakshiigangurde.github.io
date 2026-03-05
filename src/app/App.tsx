@@ -1,6 +1,7 @@
 import { Routes, Route } from 'react-router-dom';
 import { Navigation } from './components/Navigation';
 import ScrollToTop from './components/ScrollToTop';
+import SmoothScroll from './components/SmoothScroll';
 
 // Home
 import { HomeHero } from './components/home/HomeHero';
@@ -60,6 +61,7 @@ export default function App() {
     return (
         <div className="relative min-h-screen bg-[#0e0e0e] text-white">
             <ScrollToTop />
+            <SmoothScroll />
             <Navigation />
 
             {/* Add top padding to clear floating nav */}
