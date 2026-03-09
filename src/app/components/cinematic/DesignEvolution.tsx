@@ -1,4 +1,4 @@
-import { motion, AnimatePresence } from 'motion/react';
+import { motion } from 'motion/react';
 import { useState } from 'react';
 
 export function DesignEvolution() {
@@ -69,73 +69,86 @@ export function DesignEvolution() {
                 </motion.div>
 
                 {/* Visual Comparison */}
-                <div className="relative min-h-[600px]">
-                    <AnimatePresence mode="wait">
-                        {activeView === 'before' ? (
-                            /* Wireframe view */
-                            <motion.div
-                                key="wireframe"
-                                initial={{ opacity: 0, scale: 0.95 }}
-                                animate={{ opacity: 1, scale: 1 }}
-                                exit={{ opacity: 0, scale: 0.95, filter: 'blur(10px)' }}
-                                transition={{ duration: 0.6, ease: 'easeInOut' }}
-                                className="w-full"
-                            >
-                                <div className="rounded-[2.5rem] overflow-hidden border flex justify-center items-center border-gray-700/50 shadow-2xl bg-gradient-to-br from-gray-800/20 to-gray-900/20 p-2 md:p-6 lg:p-10">
-                                    {/* Wireframe Image */}
+                <div className="relative w-full">
+                    <div className="grid grid-cols-1 grid-rows-1 place-items-center">
+                        {/* Wireframe view */}
+                        <motion.div
+                            initial={false}
+                            animate={{
+                                opacity: activeView === 'before' ? 1 : 0,
+                                filter: activeView === 'before' ? 'blur(0px)' : 'blur(4px)',
+                                scale: activeView === 'before' ? 1 : 0.98
+                            }}
+                            transition={{ duration: 0.5, ease: 'easeInOut' }}
+                            className={`col-start-1 row-start-1 w-full flex flex-col items-center ${activeView === 'before' ? 'pointer-events-auto z-10' : 'pointer-events-none z-0'}`}
+                        >
+                            <div className="w-full rounded-[2.5rem] overflow-hidden border border-gray-700/50 shadow-2xl bg-gradient-to-br from-gray-800/20 to-gray-900/20 flex justify-center items-center">
+                                {/* Wireframe Image */}
+                                <img
+                                    src="/images/littlenest-booking/littlenest-booking-design-evolution-wireframes.png"
+                                    alt="Lo-Fi Wireframes"
+                                    className="w-full h-auto object-cover"
+                                />
+                            </div>
+                        </motion.div>
+
+                        {/* Final design view */}
+                        <motion.div
+                            initial={false}
+                            animate={{
+                                opacity: activeView === 'after' ? 1 : 0,
+                                filter: activeView === 'after' ? 'blur(0px)' : 'blur(4px)',
+                                scale: activeView === 'after' ? 1 : 0.98
+                            }}
+                            transition={{ duration: 0.5, ease: 'easeInOut' }}
+                            className={`col-start-1 row-start-1 w-full flex flex-col items-center ${activeView === 'after' ? 'pointer-events-auto z-10' : 'pointer-events-none z-0'}`}
+                        >
+                            <div className="relative w-full">
+                                {/* Glow */}
+                                <motion.div
+                                    className="absolute inset-0 bg-gradient-to-br from-teal-400/30 via-sky-400/30 to-pink-400/30 blur-3xl"
+                                    animate={{
+                                        opacity: activeView === 'after' ? [0, 0.6, 0.4] : 0,
+                                        scale: activeView === 'after' ? [0.8, 1.2, 1.05] : 0.8
+                                    }}
+                                    transition={{ duration: 1.5, ease: 'easeOut' }}
+                                />
+                                <div className="relative w-full rounded-[2.5rem] overflow-hidden border border-white/10 shadow-2xl bg-gradient-to-br from-teal-950/20 to-sky-950/20 flex justify-center items-center">
+                                    {/* Final design Image */}
                                     <img
-                                        src="/images/littlenest-booking/littlenest-booking-design-evolution-wireframes.png"
-                                        alt="Lo-Fi Wireframes"
-                                        className="w-full h-auto object-contain rounded-2xl"
+                                        src="/images/littlenest-booking/littlenest-booking-design-evolution-final.png"
+                                        alt="Final Design"
+                                        className="w-full h-auto object-cover"
                                     />
                                 </div>
-                                <p className="text-center text-gray-500 mt-6 text-sm uppercase tracking-widest">
-                                    Initial Concept
-                                </p>
-                            </motion.div>
-                        ) : (
-                            /* Final design view */
-                            <motion.div
-                                key="final"
-                                initial={{ opacity: 0, scale: 0.8, rotateY: -15 }}
-                                animate={{ opacity: 1, scale: 1, rotateY: 0 }}
-                                exit={{ opacity: 0, scale: 0.95 }}
-                                transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-                                className="w-full"
-                            >
-                                <div className="relative">
-                                    {/* Glow */}
-                                    <motion.div
-                                        className="absolute inset-0 bg-gradient-to-br from-teal-400/30 via-sky-400/30 to-pink-400/30 blur-3xl"
-                                        initial={{ opacity: 0, scale: 0.8 }}
-                                        animate={{ opacity: [0, 0.6, 0.4], scale: [0.8, 1.2, 1.05] }}
-                                        transition={{ duration: 1.5, ease: 'easeOut' }}
-                                    />
-                                    <motion.div
-                                        className="relative rounded-[2.5rem] overflow-hidden border border-white/10 shadow-2xl bg-gradient-to-br from-teal-950/20 to-sky-950/20 p-2 md:p-6 lg:p-10 flex justify-center items-center"
-                                        initial={{ y: 20 }}
-                                        animate={{ y: 0 }}
-                                        transition={{ duration: 0.8, delay: 0.2 }}
-                                    >
-                                        {/* Final design Image */}
-                                        <img
-                                            src="/images/littlenest-booking/littlenest-booking-design-evolution-final.png"
-                                            alt="Final Design"
-                                            className="w-full h-auto object-contain rounded-2xl"
-                                        />
-                                    </motion.div>
-                                </div>
-                                <motion.p
-                                    className="text-center text-teal-400 mt-6 text-sm uppercase tracking-widest font-semibold"
-                                    initial={{ opacity: 0, y: 10 }}
-                                    animate={{ opacity: 1, y: 0 }}
-                                    transition={{ delay: 0.9, duration: 0.5 }}
-                                >
-                                    Final Experience
-                                </motion.p>
-                            </motion.div>
-                        )}
-                    </AnimatePresence>
+                            </div>
+                        </motion.div>
+                    </div>
+
+                    <div className="mt-8 relative h-8 flex justify-center items-center w-full">
+                        <motion.p
+                            initial={false}
+                            animate={{
+                                opacity: activeView === 'before' ? 1 : 0,
+                                y: activeView === 'before' ? 0 : 5
+                            }}
+                            transition={{ duration: 0.4 }}
+                            className="absolute text-center text-gray-500 text-sm uppercase tracking-widest font-semibold"
+                        >
+                            Initial Concept
+                        </motion.p>
+                        <motion.p
+                            initial={false}
+                            animate={{
+                                opacity: activeView === 'after' ? 1 : 0,
+                                y: activeView === 'after' ? 0 : 5
+                            }}
+                            transition={{ duration: 0.4 }}
+                            className="absolute text-center text-teal-400 text-sm uppercase tracking-widest font-semibold block"
+                        >
+                            Final Experience
+                        </motion.p>
+                    </div>
                 </div>
 
                 {/* Key improvements */}

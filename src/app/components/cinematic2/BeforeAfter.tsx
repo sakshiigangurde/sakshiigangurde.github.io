@@ -44,22 +44,12 @@ export function BeforeAfter() {
                         {/* Before Column */}
                         <div className="flex flex-col">
                             {/* Before Phone */}
-                            <div className="relative mb-12">
-                                <div className="absolute inset-0 bg-gradient-to-t from-gray-500/20 via-gray-400/10 to-transparent blur-2xl scale-110" />
-                                <div className="relative bg-gradient-to-br from-zinc-900 to-black rounded-[3rem] p-3 shadow-2xl border border-white/10">
-                                    <div className="absolute top-0 left-1/2 -translate-x-1/2 w-32 h-7 bg-black rounded-b-3xl z-20" />
-                                    <div className="relative bg-gradient-to-br from-gray-100 to-gray-200 rounded-[2.5rem] overflow-hidden aspect-[9/19.5]">
-                                        <div className="absolute inset-0 p-6 flex flex-col gap-3">
-                                            <div className="h-12 bg-gray-300 rounded-2xl" />
-                                            <div className="space-y-2 flex-1">
-                                                {[...Array(6)].map((_, i) => (
-                                                    <div key={i} className="h-16 bg-white/60 rounded-xl" />
-                                                ))}
-                                            </div>
-                                        </div>
-                                    </div>
+                            <div className="relative mb-12 flex flex-col items-center">
+                                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-[280px] md:max-w-[320px] aspect-[9/19.5] bg-gradient-to-t from-gray-500/20 via-gray-400/10 to-transparent blur-xl z-0 rounded-[3rem]" />
+                                <div className="relative z-10 w-full max-w-[280px] md:max-w-[320px]">
+                                    <img src="/images/littlenest-evolution/littlenest-evolution-reduced-steps-increased-clarity-before.png" alt="Before - Reduced Steps" className="w-full h-auto object-contain drop-shadow-xl" />
                                 </div>
-                                <p className="text-center text-gray-500 mt-4 text-sm uppercase tracking-widest">Before</p>
+                                <p className="text-center text-gray-500 mt-6 z-10 text-sm uppercase tracking-widest">Before</p>
                             </div>
 
                             {/* Before Section */}
@@ -104,27 +94,12 @@ export function BeforeAfter() {
                         {/* After Column */}
                         <div className="flex flex-col">
                             {/* After Phone */}
-                            <div className="relative mb-12">
-                                <div className="absolute inset-0 bg-gradient-to-t from-teal-400/30 via-sky-400/20 to-green-300/20 blur-2xl scale-110" />
-                                <div className="relative bg-gradient-to-br from-zinc-900 to-black rounded-[3rem] p-3 shadow-2xl border border-white/10">
-                                    <div className="absolute top-0 left-1/2 -translate-x-1/2 w-32 h-7 bg-black rounded-b-3xl z-20" />
-                                    <div className="relative bg-gradient-to-br from-green-50 via-sky-50 to-pink-50 rounded-[2.5rem] overflow-hidden aspect-[9/19.5]">
-                                        <div className="absolute inset-0 p-6 flex flex-col gap-3">
-                                            <div className="h-12 bg-gradient-to-r from-green-100 to-teal-100 rounded-2xl" />
-                                            <div className="grid grid-cols-7 gap-1">
-                                                {[...Array(7)].map((_, i) => (
-                                                    <div key={i} className="aspect-square bg-white/60 rounded-lg" />
-                                                ))}
-                                            </div>
-                                            <div className="space-y-2 flex-1">
-                                                {[...Array(4)].map((_, i) => (
-                                                    <div key={i} className="h-20 bg-white/80 rounded-xl shadow-sm" />
-                                                ))}
-                                            </div>
-                                        </div>
-                                    </div>
+                            <div className="relative mb-12 flex flex-col items-center">
+                                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-[280px] md:max-w-[320px] aspect-[9/19.5] bg-gradient-to-t from-teal-400/30 via-sky-400/20 to-green-300/20 blur-xl z-0 rounded-[3rem]" />
+                                <div className="relative z-10 w-full max-w-[280px] md:max-w-[320px]">
+                                    <img src="/images/littlenest-evolution/littlenest-evolution-reduced-steps-increased-clarity-after.png" alt="After - Increased Clarity" className="w-full h-auto object-contain drop-shadow-xl" />
                                 </div>
-                                <p className="text-center text-teal-400 mt-4 text-sm uppercase tracking-widest font-semibold">After</p>
+                                <p className="text-center text-teal-400 mt-6 z-10 text-sm uppercase tracking-widest font-semibold">After</p>
                             </div>
 
                             {/* After Section */}

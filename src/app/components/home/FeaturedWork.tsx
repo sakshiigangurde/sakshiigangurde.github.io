@@ -13,6 +13,8 @@ export interface Project {
     borderColor: string;
     hoverBorderColor: string;
     slug: string;
+    image?: string;
+    imageClassName?: string;
 }
 
 const PROJECTS: Project[] = [
@@ -28,6 +30,7 @@ const PROJECTS: Project[] = [
         borderColor: 'border-teal-500/20',
         hoverBorderColor: 'hover:border-teal-400/50',
         slug: 'littlenest-booking',
+        image: '/images/littlenest-booking.png',
     },
     {
         number: '02',
@@ -41,6 +44,7 @@ const PROJECTS: Project[] = [
         borderColor: 'border-green-500/20',
         hoverBorderColor: 'hover:border-green-400/50',
         slug: 'littlenest-evolution',
+        image: '/images/littlenest-evolution.png',
     },
     {
         number: '03',
@@ -54,6 +58,8 @@ const PROJECTS: Project[] = [
         borderColor: 'border-blue-500/20',
         hoverBorderColor: 'hover:border-blue-400/50',
         slug: 'jiobusiness',
+        image: '/images/jiobusiness.png',
+        imageClassName: 'w-full max-w-[340px] lg:max-w-[400px] scale-[1.0] lg:scale-[1.0]',
     },
     {
         number: '04',
@@ -67,6 +73,7 @@ const PROJECTS: Project[] = [
         borderColor: 'border-green-500/20',
         hoverBorderColor: 'hover:border-green-400/50',
         slug: 'child-development',
+        image: '/images/child-development.png',
     },
 ];
 
@@ -169,11 +176,13 @@ export function FeaturedWork() {
                                     </div>
 
                                     {/* Visual preview */}
-                                    <div className="lg:w-[360px] relative min-h-[280px] lg:min-h-auto">
-                                        <div
-                                            className={`absolute inset-0 bg-gradient-to-br ${project.gradient} opacity-60`}
-                                        />
-                                        <div className="relative h-full flex items-center justify-center p-8">
+                                    <div className="lg:w-[450px] relative min-h-[320px] lg:min-h-auto flex items-center justify-center">
+                                        <div className="absolute inset-0 flex items-center justify-center pointer-events-none overflow-visible">
+                                            <div
+                                                className={`w-full h-full min-w-[300px] min-h-[300px] max-w-[600px] max-h-[600px] bg-gradient-to-br ${project.accentColor} opacity-[0.15] blur-[80px] rounded-full`}
+                                            />
+                                        </div>
+                                        <div className={`relative z-10 h-full w-full flex items-center justify-center ${project.image ? 'p-0' : 'p-8'}`}>
                                             <motion.div
                                                 animate={{ y: [0, -8, 0] }}
                                                 transition={{
@@ -182,13 +191,24 @@ export function FeaturedWork() {
                                                     ease: 'easeInOut',
                                                     delay: index * 0.6,
                                                 }}
-                                                className="relative bg-gradient-to-br from-gray-800/80 to-gray-900/80 rounded-2xl border border-white/10 p-8 w-full aspect-square max-w-[220px] flex items-center justify-center backdrop-blur-sm"
+                                                className={`relative flex items-center justify-center ${project.image
+                                                    ? project.imageClassName || 'w-full max-w-[340px] lg:max-w-[400px] scale-[1.5] lg:scale-[1.75]'
+                                                    : 'w-full aspect-square max-w-[220px] bg-gradient-to-br from-gray-800/80 to-gray-900/80 rounded-2xl border border-white/10 p-8 backdrop-blur-sm'
+                                                    }`}
                                             >
-                                                <span
-                                                    className={`text-7xl font-black bg-gradient-to-br ${project.accentColor} bg-clip-text text-transparent select-none`}
-                                                >
-                                                    {project.number}
-                                                </span>
+                                                {project.image ? (
+                                                    <img
+                                                        src={project.image}
+                                                        alt={`${project.title} preview`}
+                                                        className="w-full h-auto object-contain drop-shadow-2xl"
+                                                    />
+                                                ) : (
+                                                    <span
+                                                        className={`text-7xl font-black bg-gradient-to-br ${project.accentColor} bg-clip-text text-transparent select-none`}
+                                                    >
+                                                        {project.number}
+                                                    </span>
+                                                )}
                                             </motion.div>
                                         </div>
                                     </div>
