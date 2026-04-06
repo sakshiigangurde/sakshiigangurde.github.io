@@ -1,5 +1,5 @@
 import { motion } from 'motion/react';
-import { Lightbulb, Users, BarChart, Clock } from 'lucide-react';
+import { Lightbulb, Users, BarChart } from 'lucide-react';
 
 export function Learnings() {
     const insights = [
@@ -20,12 +20,7 @@ export function Learnings() {
         },
     ];
 
-    const futureIdeas = [
-        'Weekly calendar view for forward planning',
-        "Smart recommendations: 'Top picks for your child this week'",
-        'Favorite classes for quick rebooking',
-        'Waitlist notifications when classes become available',
-    ];
+
 
     return (
         <section className="relative py-32 px-6 lg:px-16 overflow-hidden">
@@ -83,43 +78,7 @@ export function Learnings() {
                     ))}
                 </div>
 
-                {/* Future ideas */}
-                <motion.div
-                    initial={{ opacity: 0, y: 40 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.8 }}
-                    className="bg-gradient-to-br from-purple-950/30 to-pink-950/30 border border-purple-500/20 rounded-3xl p-12 md:p-16"
-                >
-                    <div className="flex items-center gap-4 mb-8">
-                        <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-purple-400/20 to-pink-400/20 flex items-center justify-center">
-                            <Clock className="w-7 h-7 text-purple-400" />
-                        </div>
-                        <h3 className="text-3xl font-bold text-white">If Given More Time...</h3>
-                    </div>
 
-                    <p className="text-xl text-gray-400 mb-8">
-                        I would have explored these additional enhancements:
-                    </p>
-
-                    <div className="grid md:grid-cols-2 gap-4">
-                        {futureIdeas.map((idea, index) => (
-                            <motion.div
-                                key={index}
-                                initial={{ opacity: 0, x: index % 2 === 0 ? -20 : 20 }}
-                                whileInView={{ opacity: 1, x: 0 }}
-                                viewport={{ once: true }}
-                                transition={{ duration: 0.6, delay: index * 0.1 }}
-                                className="flex items-start gap-3 bg-white/5 rounded-2xl p-5"
-                            >
-                                <div className="w-6 h-6 rounded-full bg-gradient-to-br from-purple-400 to-pink-400 flex items-center justify-center flex-shrink-0 mt-1">
-                                    <div className="w-2 h-2 bg-white rounded-full" />
-                                </div>
-                                <p className="text-gray-300 leading-relaxed">{idea}</p>
-                            </motion.div>
-                        ))}
-                    </div>
-                </motion.div>
 
                 {/* Closing thought */}
                 <motion.div

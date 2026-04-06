@@ -117,7 +117,7 @@ export function HomeHero({ onViewWork }: HomeHeroProps) {
                         whileHover={{ scale: 1.05 }}
                         whileTap={{ scale: 0.95 }}
                         onClick={onViewWork}
-                        className="group inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-teal-400 via-cyan-400 to-blue-500 rounded-2xl text-[#0e0e0e] font-bold text-[15px] shadow-2xl shadow-teal-500/30 hover:shadow-teal-500/50 transition-all duration-300"
+                        className="group inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-[#60A5FA] to-[#818CF8] rounded-full text-white font-bold text-[15px] shadow-lg hover:shadow-xl transition-all duration-300"
                     >
                         <span>View My Work</span>
                         <ArrowDown className="w-5 h-5 group-hover:translate-y-1 transition-transform duration-200" />

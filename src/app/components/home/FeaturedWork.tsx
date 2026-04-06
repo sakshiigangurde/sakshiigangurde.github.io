@@ -20,6 +20,20 @@ export interface Project {
 const PROJECTS: Project[] = [
     {
         number: '01',
+        title: 'JioBusiness',
+        subtitle: 'Dashboard Redesign',
+        description:
+            'Transformed an underutilized enterprise dashboard into a powerful business tool—helping users complete tasks efficiently with personalized, actionable insights.',
+        tags: ['Enterprise UX', 'Dashboard Design', 'B2B', 'Data Visualization'],
+        gradient: 'from-blue-400/20 to-indigo-400/20',
+        accentColor: 'from-blue-400 to-indigo-400',
+        borderColor: 'border-blue-500/20',
+        hoverBorderColor: 'hover:border-blue-400/50',
+        slug: 'jiobusiness',
+        image: '/images/jiobusiness.png',
+    },
+    {
+        number: '02',
         title: 'LittleNest',
         subtitle: 'End-to-End Booking Experience',
         description:
@@ -33,7 +47,7 @@ const PROJECTS: Project[] = [
         image: '/images/littlenest-booking.png',
     },
     {
-        number: '02',
+        number: '03',
         title: 'LittleNest',
         subtitle: 'Booking Experience Evolution',
         description:
@@ -45,21 +59,6 @@ const PROJECTS: Project[] = [
         hoverBorderColor: 'hover:border-green-400/50',
         slug: 'littlenest-evolution',
         image: '/images/littlenest-evolution.png',
-    },
-    {
-        number: '03',
-        title: 'JioBusiness',
-        subtitle: 'Dashboard Redesign',
-        description:
-            'Transformed an underutilized enterprise dashboard into a powerful business tool—helping users complete tasks efficiently with personalized, actionable insights.',
-        tags: ['Enterprise UX', 'Dashboard Design', 'B2B', 'Data Visualization'],
-        gradient: 'from-blue-400/20 to-indigo-400/20',
-        accentColor: 'from-blue-400 to-indigo-400',
-        borderColor: 'border-blue-500/20',
-        hoverBorderColor: 'hover:border-blue-400/50',
-        slug: 'jiobusiness',
-        image: '/images/jiobusiness.png',
-        imageClassName: 'w-full max-w-[340px] lg:max-w-[400px] scale-[1.0] lg:scale-[1.0]',
     },
     {
         number: '04',
@@ -167,7 +166,7 @@ export function FeaturedWork() {
                                             <motion.div
                                                 whileHover={{ scale: 1.05 }}
                                                 whileTap={{ scale: 0.95 }}
-                                                className={`group/btn inline-flex items-center gap-3 px-7 py-3.5 bg-gradient-to-r ${project.accentColor} rounded-xl text-white font-semibold text-sm shadow-lg hover:shadow-xl transition-all duration-300`}
+                                                className="group/btn inline-flex items-center gap-3 px-8 py-3.5 bg-gradient-to-r from-[#60A5FA] to-[#818CF8] rounded-full text-white font-semibold text-[15px] shadow-lg hover:shadow-xl transition-all duration-300"
                                             >
                                                 <span>View Case Study</span>
                                                 <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform duration-200" />
@@ -177,11 +176,6 @@ export function FeaturedWork() {
 
                                     {/* Visual preview */}
                                     <div className="lg:w-[450px] relative min-h-[320px] lg:min-h-auto flex items-center justify-center">
-                                        <div className="absolute inset-0 flex items-center justify-center pointer-events-none overflow-visible">
-                                            <div
-                                                className={`w-full h-full min-w-[300px] min-h-[300px] max-w-[600px] max-h-[600px] bg-gradient-to-br ${project.accentColor} opacity-[0.15] blur-[80px] rounded-full`}
-                                            />
-                                        </div>
                                         <div className={`relative z-10 h-full w-full flex items-center justify-center ${project.image ? 'p-0' : 'p-8'}`}>
                                             <motion.div
                                                 animate={{ y: [0, -8, 0] }}
@@ -192,7 +186,7 @@ export function FeaturedWork() {
                                                     delay: index * 0.6,
                                                 }}
                                                 className={`relative flex items-center justify-center ${project.image
-                                                    ? project.imageClassName || 'w-full max-w-[340px] lg:max-w-[400px] scale-[1.5] lg:scale-[1.75]'
+                                                    ? project.imageClassName || 'w-full max-w-[340px] lg:max-w-[400px]'
                                                     : 'w-full aspect-square max-w-[220px] bg-gradient-to-br from-gray-800/80 to-gray-900/80 rounded-2xl border border-white/10 p-8 backdrop-blur-sm'
                                                     }`}
                                             >

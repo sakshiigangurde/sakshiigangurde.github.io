@@ -4,7 +4,7 @@ import { Calendar, Clock, Users } from 'lucide-react';
 
 const screens = [
     {
-        title: 'Calendar View',
+        title: 'Listing view',
         description: 'Browse daily activities at a glance',
         icon: Calendar,
         gradient: 'from-teal-500 to-sky-500',

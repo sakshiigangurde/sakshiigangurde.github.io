@@ -36,7 +36,7 @@ export function AboutHero() {
                         </h1>
 
                         <p className="text-xl text-gray-400 leading-relaxed">
-                            I'm a product designer who believes great design is invisible—it simply helps people accomplish their goals with ease and confidence.
+                            I’m a UI/UX and product designer with 5+ years of experience crafting simple, impactful, and user-focused digital experiences
                         </p>
                     </motion.div>
 

@@ -66,7 +66,7 @@ export function ContactSection() {
                         href="mailto:your.email@example.com"
                         whileHover={{ scale: 1.04 }}
                         whileTap={{ scale: 0.96 }}
-                        className="group inline-flex items-center gap-4 px-10 py-5 bg-gradient-to-r from-teal-400 via-cyan-400 to-blue-500 rounded-2xl text-[#0e0e0e] font-bold text-lg shadow-2xl shadow-teal-500/30 hover:shadow-teal-500/50 transition-all duration-300"
+                        className="group inline-flex items-center gap-4 px-10 py-5 bg-gradient-to-r from-[#60A5FA] to-[#818CF8] rounded-full text-white font-bold text-lg shadow-lg hover:shadow-xl transition-all duration-300"
                     >
                         <Mail className="w-5 h-5" />
                         <span>your.email@example.com</span>

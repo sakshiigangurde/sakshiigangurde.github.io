@@ -71,7 +71,7 @@ export function CinematicClosing({ nextProjectLink }: CinematicClosingProps) {
                             <motion.div
                                 whileHover={{ scale: 1.05 }}
                                 whileTap={{ scale: 0.95 }}
-                                className="group inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-teal-400 via-sky-400 to-pink-400 rounded-2xl text-white font-bold shadow-xl hover:shadow-2xl transition-all duration-300"
+                                className="group inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-[#60A5FA] to-[#818CF8] rounded-full text-white font-bold text-[15px] shadow-lg hover:shadow-xl transition-all duration-300"
                             >
                                 <span>View Next Project</span>
                                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-200" />
@@ -82,7 +82,7 @@ export function CinematicClosing({ nextProjectLink }: CinematicClosingProps) {
                         id="case-get-in-touch"
                         whileHover={{ scale: 1.05 }}
                         whileTap={{ scale: 0.95 }}
-                        className="inline-flex items-center gap-3 px-8 py-4 bg-white/5 border border-white/10 rounded-2xl text-white font-semibold hover:bg-white/10 hover:border-white/20 transition-all backdrop-blur"
+                        className="inline-flex items-center gap-3 px-8 py-4 bg-white/5 border border-white/10 rounded-full text-white font-semibold hover:bg-white/10 hover:border-white/20 transition-all backdrop-blur"
                     >
                         <Mail className="w-5 h-5" />
                         <span>Get in Touch</span>
@@ -106,7 +106,7 @@ export function CinematicClosing({ nextProjectLink }: CinematicClosingProps) {
                             id={id}
                             whileHover={{ scale: 1.1, y: -4 }}
                             whileTap={{ scale: 0.9 }}
-                            className="group flex items-center gap-2.5 px-5 py-2.5 bg-white/5 border border-white/10 rounded-xl text-white hover:bg-white/10 hover:border-white/20 transition-all backdrop-blur"
+                            className="group flex items-center gap-2.5 px-5 py-2.5 bg-white/5 border border-white/10 rounded-full text-white hover:bg-white/10 hover:border-white/20 transition-all backdrop-blur"
                         >
                             <Icon className="w-4 h-4 text-gray-400 group-hover:text-white transition-colors" />
                             <span className="text-sm font-medium">{label}</span>

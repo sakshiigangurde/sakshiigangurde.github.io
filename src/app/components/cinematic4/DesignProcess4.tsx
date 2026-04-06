@@ -17,7 +17,7 @@ export function DesignProcess4() {
       title: "Gamification & Rewards",
       subtitle: "Celebrate Through Details",
       description: "How we reward consistency",
-      summary: "We have visual progress representation at multiple touch points across the experience. It serves as a subtle yet motivating nudge to keep parents returning to log data and complete actionable play tasks.",
+      summary: "Each milestone in a child’s journey is celebrated through meaningful achievements. As children progress, they earn badges that recognize their efforts, growth, and participation. These badges are not just rewards — they are joyful moments that parents can proudly share, turning every achievement into a celebration of progress.",
       color: "from-yellow-400 to-orange-400",
       bgGradient: "from-yellow-400/20 via-orange-400/20 to-pink-400/20"
     },
@@ -26,7 +26,7 @@ export function DesignProcess4() {
       title: "The AI-enabled Growth Story",
       subtitle: "Turn Data Into Stories",
       description: "The Concept",
-      summary: "With Apple Health and fitness tracking apps proving that people love visually digestible data—LittleNest creates a shareable 'Growth Story' for parents every month. It’s an AI-generated personalized story celebrating their child's unique milestones relative to their age group.",
+      summary: "With Apple Health and fitness tracking apps proving that people love visually digestible data—LittleNest creates a shareable 'Growth Story' for parents every term. It’s a personalized story celebrating their child's unique milestones relative to their age group.",
       color: "from-sky-400 to-purple-400",
       bgGradient: "from-sky-400/20 via-purple-400/20 to-pink-400/20"
     }
