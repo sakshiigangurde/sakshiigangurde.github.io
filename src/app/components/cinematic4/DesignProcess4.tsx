@@ -10,7 +10,8 @@ export function DesignProcess4() {
       description: "How it all works",
       summary: "Since parents intuitively see a plant growing as a symbol of care, the app tracks the child's developmental progress through the metaphor of a blooming garden.",
       color: "from-green-400 to-teal-400",
-      bgGradient: "from-green-400/20 via-teal-400/20 to-sky-400/20"
+      bgGradient: "from-green-400/20 via-teal-400/20 to-sky-400/20",
+      videoUrl: "/videos/littlenest-child-evolution/screen1.mp4"
     },
     {
       icon: Trophy,
@@ -19,7 +20,8 @@ export function DesignProcess4() {
       description: "How we reward consistency",
       summary: "Each milestone in a child’s journey is celebrated through meaningful achievements. As children progress, they earn badges that recognize their efforts, growth, and participation. These badges are not just rewards — they are joyful moments that parents can proudly share, turning every achievement into a celebration of progress.",
       color: "from-yellow-400 to-orange-400",
-      bgGradient: "from-yellow-400/20 via-orange-400/20 to-pink-400/20"
+      bgGradient: "from-yellow-400/20 via-orange-400/20 to-pink-400/20",
+      videoUrl: "/videos/littlenest-child-evolution/Screen2.mp4"
     },
     {
       icon: BookOpen,
@@ -28,7 +30,8 @@ export function DesignProcess4() {
       description: "The Concept",
       summary: "With Apple Health and fitness tracking apps proving that people love visually digestible data—LittleNest creates a shareable 'Growth Story' for parents every term. It’s a personalized story celebrating their child's unique milestones relative to their age group.",
       color: "from-sky-400 to-purple-400",
-      bgGradient: "from-sky-400/20 via-purple-400/20 to-pink-400/20"
+      bgGradient: "from-sky-400/20 via-purple-400/20 to-pink-400/20",
+      videoUrl: "/videos/littlenest-child-evolution/screen3.mp4"
     }
   ];
 
@@ -103,12 +106,24 @@ export function DesignProcess4() {
               >
                 <div className="relative w-full max-w-[280px]">
                   {/* Mobile Frame */}
-                  <div className="aspect-[9/19] bg-gradient-to-br from-gray-800/50 to-gray-900/50 rounded-[2.5rem] flex items-center justify-center border-[6px] border-gray-800/80 shadow-2xl backdrop-blur-sm">
-                    <div className="text-center px-6">
-                      <div className="text-4xl mb-3">📱</div>
-                      <p className="text-base text-gray-400 font-medium">Mobile Screen</p>
-                      <p className="text-xs text-gray-500 mt-1.5">{metaphor.subtitle}</p>
+                  <div className="relative aspect-[9/19] bg-black rounded-[2.5rem] border-[8px] border-gray-800 shadow-2xl overflow-hidden group">
+                    {/* Notch/Dynamic Island for realistic look */}
+                    <div className="absolute top-3 left-1/2 -translate-x-1/2 w-24 h-4 bg-black rounded-full z-30 flex items-center justify-center">
+                      <div className="w-2 h-2 rounded-full bg-gray-900/80 absolute right-4" />
                     </div>
+                    
+                    {/* Video Content */}
+                    <video
+                      src={metaphor.videoUrl}
+                      className="absolute inset-0 w-full h-full object-cover z-10"
+                      autoPlay
+                      loop
+                      muted
+                      playsInline
+                    />
+                    
+                    {/* Subtle Overlay Shadow to blend video inside the bezel */}
+                    <div className="absolute inset-0 border border-black/10 rounded-[2rem] pointer-events-none z-20" />
                   </div>
                   {/* Glow Effect */}
                   <div className={`absolute inset-0 bg-gradient-to-br ${metaphor.color} opacity-30 blur-3xl -z-10`} />

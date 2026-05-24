@@ -40,29 +40,19 @@ export function AboutHero() {
                         </p>
                     </motion.div>
 
-                    {/* Visual */}
-                    <motion.div initial={{ opacity: 0, x: 40 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 1, delay: 0.4 }} className="relative">
-                        <div className="absolute inset-0 bg-gradient-to-br from-violet-400/20 via-pink-400/20 to-blue-400/20 blur-3xl scale-110 pointer-events-none" />
-                        <div className="relative bg-gradient-to-br from-gray-800/80 to-gray-900/80 rounded-[3rem] border border-white/10 p-12 aspect-square flex items-center justify-center overflow-hidden backdrop-blur">
-                            <motion.div
-                                animate={{ rotate: 360 }}
-                                transition={{ duration: 22, repeat: Infinity, ease: 'linear' }}
-                                className="absolute inset-0"
-                            >
-                                <div className="absolute top-12 right-12 w-28 h-28 bg-gradient-to-br from-violet-400/25 to-pink-400/25 rounded-3xl rotate-12" />
-                                <div className="absolute bottom-12 left-12 w-36 h-36 bg-gradient-to-br from-blue-400/25 to-cyan-400/25 rounded-3xl -rotate-12" />
-                                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-20 h-20 bg-gradient-to-br from-pink-400/25 to-violet-400/25 rounded-2xl rotate-45" />
-                            </motion.div>
-                            <div className="relative z-10">
-                                <motion.div
-                                    animate={{ scale: [1, 1.04, 1], rotate: [0, 4, -4, 0] }}
-                                    transition={{ duration: 6, repeat: Infinity, ease: 'easeInOut' }}
-                                    className="w-56 h-56 rounded-full bg-gradient-to-br from-violet-500 via-pink-500 to-blue-500 flex items-center justify-center shadow-2xl"
-                                >
-                                    <div className="w-52 h-52 rounded-full bg-[#111] flex items-center justify-center">
-                                        <span className="text-7xl">🎨</span>
-                                    </div>
-                                </motion.div>
+                    {/* Visual — Profile Photo */}
+                    <motion.div initial={{ opacity: 0, x: 40 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 1, delay: 0.4 }} className="relative flex justify-center">
+                        {/* Glow behind photo */}
+                        <div className="absolute inset-0 bg-gradient-to-br from-violet-400/25 via-pink-400/20 to-blue-400/20 blur-3xl scale-110 pointer-events-none rounded-full" />
+
+                        {/* Gradient border ring */}
+                        <div className="relative p-[3px] rounded-[2.5rem] bg-gradient-to-br from-violet-500 via-pink-500 to-blue-500 shadow-2xl shadow-violet-500/20">
+                            <div className="rounded-[2.4rem] overflow-hidden w-full max-w-[420px] aspect-square bg-[#0e0e0e]">
+                                <img
+                                    src="/images/sakshi-profile.jpg"
+                                    alt="Sakshi — UI/UX Designer"
+                                    className="w-full h-full object-cover object-top"
+                                />
                             </div>
                         </div>
                     </motion.div>

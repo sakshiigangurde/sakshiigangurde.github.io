@@ -32,7 +32,7 @@ export function MyStory() {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.7 }}
-                    className="mb-16"
+                    className="mb-16 text-center"
                 >
                     <span className="text-xs uppercase tracking-[0.3em] text-violet-400/70 mb-4 block font-semibold">My Journey</span>
                     <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white">
