@@ -1,5 +1,6 @@
 import { motion } from "motion/react";
 import { Flower2, Trophy, BookOpen } from "lucide-react";
+import { publicUrl } from "@/lib/publicUrl";
 
 export function DesignProcess4() {
   const metaphors = [
@@ -11,7 +12,7 @@ export function DesignProcess4() {
       summary: "Since parents intuitively see a plant growing as a symbol of care, the app tracks the child's developmental progress through the metaphor of a blooming garden.",
       color: "from-green-400 to-teal-400",
       bgGradient: "from-green-400/20 via-teal-400/20 to-sky-400/20",
-      videoUrl: "/videos/littlenest-child-evolution/screen1.mp4"
+      videoUrl: publicUrl("/videos/littlenest-child-evolution/screen1.mp4")
     },
     {
       icon: Trophy,
@@ -21,7 +22,7 @@ export function DesignProcess4() {
       summary: "Each milestone in a child’s journey is celebrated through meaningful achievements. As children progress, they earn badges that recognize their efforts, growth, and participation. These badges are not just rewards — they are joyful moments that parents can proudly share, turning every achievement into a celebration of progress.",
       color: "from-yellow-400 to-orange-400",
       bgGradient: "from-yellow-400/20 via-orange-400/20 to-pink-400/20",
-      videoUrl: "/videos/littlenest-child-evolution/Screen2.mp4"
+      videoUrl: publicUrl("/videos/littlenest-child-evolution/Screen2.mp4")
     },
     {
       icon: BookOpen,
@@ -31,7 +32,7 @@ export function DesignProcess4() {
       summary: "With Apple Health and fitness tracking apps proving that people love visually digestible data—LittleNest creates a shareable 'Growth Story' for parents every term. It’s a personalized story celebrating their child's unique milestones relative to their age group.",
       color: "from-sky-400 to-purple-400",
       bgGradient: "from-sky-400/20 via-purple-400/20 to-pink-400/20",
-      videoUrl: "/videos/littlenest-child-evolution/screen3.mp4"
+      videoUrl: publicUrl("/videos/littlenest-child-evolution/screen3.mp4")
     }
   ];
 
@@ -111,7 +112,7 @@ export function DesignProcess4() {
                     <div className="absolute top-3 left-1/2 -translate-x-1/2 w-24 h-4 bg-black rounded-full z-30 flex items-center justify-center">
                       <div className="w-2 h-2 rounded-full bg-gray-900/80 absolute right-4" />
                     </div>
-                    
+
                     {/* Video Content */}
                     <video
                       src={metaphor.videoUrl}
@@ -121,7 +122,7 @@ export function DesignProcess4() {
                       muted
                       playsInline
                     />
-                    
+
                     {/* Subtle Overlay Shadow to blend video inside the bezel */}
                     <div className="absolute inset-0 border border-black/10 rounded-[2rem] pointer-events-none z-20" />
                   </div>

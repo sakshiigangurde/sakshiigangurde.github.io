@@ -1,6 +1,7 @@
 import { motion } from 'motion/react';
 import { ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { publicUrl } from '@/lib/publicUrl';
 
 export interface Project {
     number: string;
@@ -30,7 +31,7 @@ const PROJECTS: Project[] = [
         borderColor: 'border-blue-500/20',
         hoverBorderColor: 'hover:border-blue-400/50',
         slug: 'jiobusiness',
-        image: '/images/jiobusiness.png',
+        image: publicUrl('/images/jiobusiness.png'),
     },
     {
         number: '02',
@@ -44,7 +45,7 @@ const PROJECTS: Project[] = [
         borderColor: 'border-teal-500/20',
         hoverBorderColor: 'hover:border-teal-400/50',
         slug: 'littlenest-booking',
-        image: '/images/littlenest-booking.png',
+        image: publicUrl('/images/littlenest-booking.png'),
     },
     {
         number: '03',
@@ -58,7 +59,7 @@ const PROJECTS: Project[] = [
         borderColor: 'border-green-500/20',
         hoverBorderColor: 'hover:border-green-400/50',
         slug: 'littlenest-evolution',
-        image: '/images/littlenest-evolution.png',
+        image: publicUrl('/images/littlenest-evolution.png'),
     },
     {
         number: '04',
@@ -72,7 +73,7 @@ const PROJECTS: Project[] = [
         borderColor: 'border-green-500/20',
         hoverBorderColor: 'hover:border-green-400/50',
         slug: 'child-development',
-        image: '/images/child-development.png',
+        image: publicUrl('/images/child-development.png'),
     },
 ];
 

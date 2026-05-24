@@ -1,6 +1,9 @@
 import { useState } from 'react';
 import { Menu, X } from 'lucide-react';
 import { Link, useLocation } from 'react-router-dom';
+import { publicUrl } from '@/lib/publicUrl';
+
+const RESUME_FILE = 'sakshi_gangurde_resume.pdf';
 
 export function Navigation() {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -10,6 +13,11 @@ export function Navigation() {
         setIsMenuOpen(false);
         // window.scrollTo is handled by ScrollToTop component
     };
+
+    const isAboutPage = location.pathname === '/about';
+    const secondaryNav = isAboutPage
+        ? { to: '/', label: 'Home', id: 'nav-home' }
+        : { to: '/about', label: 'About Me', id: 'nav-about' };
 
     return (
         <nav
@@ -37,19 +45,19 @@ export function Navigation() {
                         {/* Desktop Nav */}
                         <div className="hidden md:flex items-center gap-5">
                             <Link
-                                to="/about"
-                                id="nav-about"
+                                to={secondaryNav.to}
+                                id={secondaryNav.id}
                                 onClick={handleNavClick}
-                                className={`text-[14px] font-medium transition-colors ${location.pathname === '/about' ? 'text-teal-400' : 'text-gray-400 hover:text-white'
+                                className={`text-[14px] font-medium transition-colors ${location.pathname === secondaryNav.to ? 'text-teal-400' : 'text-gray-400 hover:text-white'
                                     }`}
                             >
-                                About Me
+                                {secondaryNav.label}
                             </Link>
                             <a
                                 id="nav-resume"
-                                href="#"
+                                href={publicUrl(`/${RESUME_FILE}`)}
+                                download={RESUME_FILE}
                                 className="px-5 py-2 bg-white/6 hover:bg-white/10 border border-white/10 rounded-full text-white text-[14px] font-medium transition-all hover:border-white/20"
-                                onClick={e => e.preventDefault()}
                             >
                                 My Resume
                             </a>
@@ -72,27 +80,23 @@ export function Navigation() {
                     <div className="md:hidden border-t border-white/10">
                         <div className="px-5 py-4 space-y-1.5">
                             <Link
-                                to="/"
-                                id="nav-mobile-home"
+                                to={secondaryNav.to}
+                                id={`${secondaryNav.id}-mobile`}
                                 onClick={handleNavClick}
-                                className="block w-full px-4 py-2.5 rounded-xl text-left text-gray-300 hover:text-white hover:bg-white/5 transition-all text-[14px] font-medium"
+                                className={`block w-full px-4 py-2.5 rounded-xl text-left transition-all text-[14px] font-medium ${location.pathname === secondaryNav.to ? 'text-teal-400 bg-white/5' : 'text-gray-300 hover:text-white hover:bg-white/5'
+                                    }`}
                             >
-                                Home
+                                {secondaryNav.label}
                             </Link>
-                            <Link
-                                to="/about"
-                                id="nav-mobile-about"
-                                onClick={handleNavClick}
-                                className="block w-full px-4 py-2.5 rounded-xl text-left text-gray-300 hover:text-white hover:bg-white/5 transition-all text-[14px] font-medium"
-                            >
-                                About Me
-                            </Link>
-                            <button
+                            <a
                                 id="nav-mobile-resume"
-                                className="w-full px-4 py-2.5 rounded-xl bg-white/5 border border-white/10 text-white text-[14px] font-medium text-left hover:bg-white/10 transition-all"
+                                href={publicUrl(`/${RESUME_FILE}`)}
+                                download={RESUME_FILE}
+                                onClick={handleNavClick}
+                                className="block w-full px-4 py-2.5 rounded-xl bg-white/5 border border-white/10 text-white text-[14px] font-medium text-left hover:bg-white/10 transition-all"
                             >
                                 My Resume
-                            </button>
+                            </a>
                         </div>
                     </div>
                 )}

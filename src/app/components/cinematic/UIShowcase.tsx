@@ -1,6 +1,7 @@
 import { motion, useScroll, useTransform } from 'motion/react';
 import { useRef } from 'react';
 import { Calendar, Clock, Users } from 'lucide-react';
+import { publicUrl } from '@/lib/publicUrl';
 
 const screens = [
     {
@@ -127,7 +128,7 @@ export function UIShowcase() {
                                         {index === 0 ? (
                                             <div className="relative mx-auto drop-shadow-2xl">
                                                 <img
-                                                    src="/images/littlenest-booking/littlenest-booking-ui-showcase-calendar-view.png"
+                                                    src={publicUrl('/images/littlenest-booking/littlenest-booking-ui-showcase-calendar-view.png')}
                                                     alt={screen.title}
                                                     className="w-full h-auto object-contain"
                                                 />
@@ -135,7 +136,7 @@ export function UIShowcase() {
                                         ) : index === 1 ? (
                                             <div className="relative mx-auto drop-shadow-2xl">
                                                 <img
-                                                    src="/images/littlenest-booking/littlenest-booking-ui-showcase-class-details.png"
+                                                    src={publicUrl('/images/littlenest-booking/littlenest-booking-ui-showcase-class-details.png')}
                                                     alt={screen.title}
                                                     className="w-full h-auto object-contain"
                                                 />
@@ -143,7 +144,7 @@ export function UIShowcase() {
                                         ) : (
                                             <div className="relative mx-auto drop-shadow-2xl">
                                                 <img
-                                                    src="/images/littlenest-booking/littlenest-booking-ui-showcase-my-bookings.png"
+                                                    src={publicUrl('/images/littlenest-booking/littlenest-booking-ui-showcase-my-bookings.png')}
                                                     alt={screen.title}
                                                     className="w-full h-auto object-contain"
                                                 />

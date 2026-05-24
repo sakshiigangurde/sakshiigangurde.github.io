@@ -45,7 +45,7 @@ export function AboutContact() {
                 >
                     <motion.a
                         id="about-email-cta"
-                        href="mailto:your.email@example.com"
+                        href="mailto:sakshi.g2805@gmail.com"
                         whileHover={{ scale: 1.04 }}
                         whileTap={{ scale: 0.96 }}
                         className="group inline-flex items-center gap-3 px-9 py-4 bg-gradient-to-r from-violet-500 via-pink-500 to-blue-500 rounded-2xl text-white font-bold shadow-2xl shadow-violet-500/30 hover:shadow-violet-500/50 transition-all duration-300"
@@ -63,17 +63,24 @@ export function AboutContact() {
                     transition={{ duration: 0.7, delay: 0.35 }}
                     className="flex items-center justify-center gap-3 flex-wrap"
                 >
-                    {[{ id: 'about-social-linkedin', Icon: Linkedin, label: 'LinkedIn' }, { id: 'about-social-behance', Icon: BehanceIcon, label: 'Behance' }].map(({ id, Icon, label }) => (
-                        <motion.button
+                    {[
+                        { id: 'about-social-linkedin', Icon: Linkedin, label: 'LinkedIn', href: 'https://www.linkedin.com/in/sakshi-gangurde-12222918b' },
+                        { id: 'about-social-behance', Icon: BehanceIcon, label: 'Behance', href: 'https://www.behance.net/sakshigangurde' },
+                    ].map(({ id, Icon, label, href }) => (
+                        <motion.a
                             key={id}
                             id={id}
+                            href={href}
+                            target="_blank"
+                            rel="noopener noreferrer"
                             whileHover={{ scale: 1.08, y: -4 }}
                             whileTap={{ scale: 0.92 }}
                             className="group flex items-center gap-2.5 px-5 py-2.5 bg-white/5 border border-white/10 rounded-xl text-white hover:bg-white/10 hover:border-white/20 transition-all"
+                            aria-label={label}
                         >
                             <Icon className="w-4 h-4 text-gray-400 group-hover:text-white transition-colors" />
                             <span className="text-sm font-medium">{label}</span>
-                        </motion.button>
+                        </motion.a>
                     ))}
                 </motion.div>
             </div>

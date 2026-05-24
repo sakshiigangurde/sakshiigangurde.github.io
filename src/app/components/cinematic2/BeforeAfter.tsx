@@ -1,5 +1,5 @@
 import { motion } from 'motion/react';
-
+import { publicUrl } from '@/lib/publicUrl';
 
 export function BeforeAfter() {
     return (
@@ -47,7 +47,7 @@ export function BeforeAfter() {
                             <div className="relative mb-12 flex flex-col items-center">
                                 <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-[280px] md:max-w-[320px] aspect-[9/19.5] bg-gradient-to-t from-gray-500/20 via-gray-400/10 to-transparent blur-xl z-0 rounded-[3rem]" />
                                 <div className="relative z-10 w-full max-w-[280px] md:max-w-[320px]">
-                                    <img src="/images/littlenest-evolution/littlenest-evolution-reduced-steps-increased-clarity-before.png" alt="Before - Reduced Steps" className="w-full h-auto object-contain drop-shadow-xl" />
+                                    <img src={publicUrl('/images/littlenest-evolution/littlenest-evolution-reduced-steps-increased-clarity-before.png')} alt="Before - Reduced Steps" className="w-full h-auto object-contain drop-shadow-xl" />
                                 </div>
                                 <p className="text-center text-gray-500 mt-6 z-10 text-sm uppercase tracking-widest">Before</p>
                             </div>
@@ -97,7 +97,7 @@ export function BeforeAfter() {
                             <div className="relative mb-12 flex flex-col items-center">
                                 <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-[280px] md:max-w-[320px] aspect-[9/19.5] bg-gradient-to-t from-teal-400/30 via-sky-400/20 to-green-300/20 blur-xl z-0 rounded-[3rem]" />
                                 <div className="relative z-10 w-full max-w-[280px] md:max-w-[320px]">
-                                    <img src="/images/littlenest-evolution/littlenest-evolution-reduced-steps-increased-clarity-after.png" alt="After - Increased Clarity" className="w-full h-auto object-contain drop-shadow-xl" />
+                                    <img src={publicUrl('/images/littlenest-evolution/littlenest-evolution-reduced-steps-increased-clarity-after.png')} alt="After - Increased Clarity" className="w-full h-auto object-contain drop-shadow-xl" />
                                 </div>
                                 <p className="text-center text-teal-400 mt-6 z-10 text-sm uppercase tracking-widest font-semibold">After</p>
                             </div>

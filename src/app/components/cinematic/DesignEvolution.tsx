@@ -1,5 +1,6 @@
 import { motion } from 'motion/react';
 import { useState } from 'react';
+import { publicUrl } from '@/lib/publicUrl';
 
 export function DesignEvolution() {
     const [activeView, setActiveView] = useState<'before' | 'after'>('before');
@@ -85,7 +86,7 @@ export function DesignEvolution() {
                             <div className="w-full rounded-[2.5rem] overflow-hidden border border-gray-700/50 shadow-2xl bg-gradient-to-br from-gray-800/20 to-gray-900/20 flex justify-center items-center">
                                 {/* Wireframe Image */}
                                 <img
-                                    src="/images/littlenest-booking/littlenest-booking-design-evolution-wireframes.png"
+                                    src={publicUrl('/images/littlenest-booking/littlenest-booking-design-evolution-wireframes.png')}
                                     alt="Lo-Fi Wireframes"
                                     className="w-full h-auto object-cover"
                                 />
@@ -116,7 +117,7 @@ export function DesignEvolution() {
                                 <div className="relative w-full rounded-[2.5rem] overflow-hidden border border-white/10 shadow-2xl bg-gradient-to-br from-teal-950/20 to-sky-950/20 flex justify-center items-center">
                                     {/* Final design Image */}
                                     <img
-                                        src="/images/littlenest-booking/littlenest-booking-design-evolution-final.png"
+                                        src={publicUrl('/images/littlenest-booking/littlenest-booking-design-evolution-final.png')}
                                         alt="Final Design"
                                         className="w-full h-auto object-cover"
                                     />

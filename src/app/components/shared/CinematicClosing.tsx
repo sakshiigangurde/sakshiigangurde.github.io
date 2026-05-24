@@ -78,15 +78,16 @@ export function CinematicClosing({ nextProjectLink }: CinematicClosingProps) {
                             </motion.div>
                         </Link>
                     )}
-                    <motion.button
+                    <motion.a
                         id="case-get-in-touch"
+                        href="mailto:sakshi.g2805@gmail.com"
                         whileHover={{ scale: 1.05 }}
                         whileTap={{ scale: 0.95 }}
                         className="inline-flex items-center gap-3 px-8 py-4 bg-white/5 border border-white/10 rounded-full text-white font-semibold hover:bg-white/10 hover:border-white/20 transition-all backdrop-blur"
                     >
                         <Mail className="w-5 h-5" />
                         <span>Get in Touch</span>
-                    </motion.button>
+                    </motion.a>
                 </motion.div>
 
                 <motion.div
@@ -97,20 +98,23 @@ export function CinematicClosing({ nextProjectLink }: CinematicClosingProps) {
                     className="flex items-center justify-center gap-3 flex-wrap mb-16"
                 >
                     {[
-                        { id: 'closing-linkedin', Icon: Linkedin, label: 'LinkedIn' },
-                        { id: 'closing-behance', Icon: BehanceIcon, label: 'Behance' },
-                        { id: 'closing-email', Icon: Mail, label: 'Email' },
-                    ].map(({ id, Icon, label }) => (
-                        <motion.button
+                        { id: 'closing-linkedin', Icon: Linkedin, label: 'LinkedIn', href: 'https://www.linkedin.com/in/sakshi-gangurde-12222918b', external: true },
+                        { id: 'closing-behance', Icon: BehanceIcon, label: 'Behance', href: 'https://www.behance.net/sakshigangurde', external: true },
+                        { id: 'closing-email', Icon: Mail, label: 'Email', href: 'mailto:sakshi.g2805@gmail.com', external: false },
+                    ].map(({ id, Icon, label, href, external }) => (
+                        <motion.a
                             key={id}
                             id={id}
+                            href={href}
+                            {...(external ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
                             whileHover={{ scale: 1.1, y: -4 }}
                             whileTap={{ scale: 0.9 }}
                             className="group flex items-center gap-2.5 px-5 py-2.5 bg-white/5 border border-white/10 rounded-full text-white hover:bg-white/10 hover:border-white/20 transition-all backdrop-blur"
+                            aria-label={label}
                         >
                             <Icon className="w-4 h-4 text-gray-400 group-hover:text-white transition-colors" />
                             <span className="text-sm font-medium">{label}</span>
-                        </motion.button>
+                        </motion.a>
                     ))}
                 </motion.div>
 

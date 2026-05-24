@@ -7,9 +7,11 @@ const BehanceIcon = ({ className }: { className?: string }) => (
     </svg>
 );
 
+const CONTACT_EMAIL = 'sakshi.g2805@gmail.com';
+
 const socialLinks = [
-    { id: 'social-linkedin', Icon: Linkedin, label: 'LinkedIn', href: '#' },
-    { id: 'social-behance', Icon: BehanceIcon, label: 'Behance', href: '#' },
+    { id: 'social-linkedin', Icon: Linkedin, label: 'LinkedIn', href: 'https://www.linkedin.com/in/sakshi-gangurde-12222918b' },
+    { id: 'social-behance', Icon: BehanceIcon, label: 'Behance', href: 'https://www.behance.net/sakshigangurde' },
 ];
 
 export function ContactSection() {
@@ -63,13 +65,13 @@ export function ContactSection() {
                 >
                     <motion.a
                         id="contact-email-cta"
-                        href="mailto:your.email@example.com"
+                        href={`mailto:${CONTACT_EMAIL}`}
                         whileHover={{ scale: 1.04 }}
                         whileTap={{ scale: 0.96 }}
                         className="group inline-flex items-center gap-4 px-10 py-5 bg-gradient-to-r from-[#60A5FA] to-[#818CF8] rounded-full text-white font-bold text-lg shadow-lg hover:shadow-xl transition-all duration-300"
                     >
                         <Mail className="w-5 h-5" />
-                        <span>your.email@example.com</span>
+                        <span>{CONTACT_EMAIL}</span>
                         <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-200" />
                     </motion.a>
                 </motion.div>
@@ -87,6 +89,8 @@ export function ContactSection() {
                             key={id}
                             id={id}
                             href={href}
+                            target="_blank"
+                            rel="noopener noreferrer"
                             whileHover={{ scale: 1.08, y: -4 }}
                             whileTap={{ scale: 0.92 }}
                             className="group flex items-center gap-2.5 px-5 py-2.5 bg-white/5 border border-white/10 rounded-xl text-white hover:bg-white/10 hover:border-white/20 transition-all backdrop-blur cursor-pointer"

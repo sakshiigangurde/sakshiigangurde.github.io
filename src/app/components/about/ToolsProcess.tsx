@@ -1,35 +1,23 @@
 import { motion } from 'motion/react';
-import { Palette, Layers, Smartphone, Code } from 'lucide-react';
+import type { ComponentType } from 'react';
+import {
+    FigmaIcon,
+    FramerIcon,
+    PhotoshopIcon,
+    IllustratorIcon,
+    AnimateIcon,
+    AdobeXDIcon,
+    PencilPaperIcon,
+} from './toolIcons';
 
-function FigmaIcon({ className }: { className?: string }) {
-    return (
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}>
-            <path d="M8.5 2A3.5 3.5 0 0 0 5 5.5v3.5h3.5A3.5 3.5 0 0 0 12 5.5V2H8.5Z" />
-            <path d="M15.5 2A3.5 3.5 0 0 0 12 5.5V9h3.5A3.5 3.5 0 0 0 19 5.5V2h-3.5Z" />
-            <path d="M8.5 9A3.5 3.5 0 0 0 5 12.5V16h3.5a3.5 3.5 0 0 0 3.5-3.5V9H8.5Z" />
-            <path d="M12 12.5A3.5 3.5 0 0 0 15.5 16H19v-3.5A3.5 3.5 0 0 0 15.5 9H12v3.5Z" />
-            <path d="M8.5 16A3.5 3.5 0 0 0 5 19.5v3.5h3.5a3.5 3.5 0 0 0 3.5-3.5V16H8.5Z" />
-        </svg>
-    );
-}
-
-function FramerIcon({ className }: { className?: string }) {
-    return (
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}>
-            <path d="M5 2h14l-7 7H5V2z" />
-            <path d="M5 9h7l7 7H5V9z" />
-            <path d="M12 16v7l-7-7h7z" />
-        </svg>
-    );
-}
-
-const tools = [
-    { name: 'Figma', category: 'Design', icon: FigmaIcon },
+const tools: { name: string; category: string; icon: ComponentType<{ className?: string }> }[] = [
+    { name: 'Figma', category: 'UI Design', icon: FigmaIcon },
+    { name: 'Adobe Photoshop', category: 'Image Editing', icon: PhotoshopIcon },
+    { name: 'Adobe Animate', category: 'Motion', icon: AnimateIcon },
+    { name: 'Adobe Illustrator', category: 'Vector Design', icon: IllustratorIcon },
+    { name: 'Adobe XD', category: 'Prototyping', icon: AdobeXDIcon },
     { name: 'Framer', category: 'Prototyping', icon: FramerIcon },
-    { name: 'Adobe CC', category: 'Visual Design', icon: Palette },
-    { name: 'FigJam', category: 'Collaboration', icon: Layers },
-    { name: 'Principle', category: 'Animation', icon: Smartphone },
-    { name: 'HTML/CSS', category: 'Development', icon: Code },
+    { name: 'Pencil and Paper', category: 'Ideation', icon: PencilPaperIcon },
 ];
 
 const processSteps = [
@@ -76,7 +64,7 @@ export function ToolsProcess() {
                         </h2>
                     </motion.div>
 
-                    <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-5">
+                    <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-5">
                         {tools.map((tool, i) => {
                             const Icon = tool.icon;
                             return (
