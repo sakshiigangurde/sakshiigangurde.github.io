@@ -30,7 +30,7 @@ export function HowIGotHere() {
                 </motion.div>
 
                 {/* Paragraphs and Quote Block - Aligned to match the width and padding of the timeline cards above */}
-                <div className="md:pl-16 space-y-8 text-gray-300/90 text-lg md:text-xl leading-relaxed font-light">
+                <div className="space-y-8 text-gray-300/90 text-lg md:text-xl leading-relaxed font-light text-center">
                     {/* Paragraph 1 */}
                     <motion.p
                         initial={{ opacity: 0, y: 15 }}

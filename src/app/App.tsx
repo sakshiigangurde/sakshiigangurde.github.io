@@ -9,7 +9,7 @@ import { FeaturedWork } from './components/home/FeaturedWork';
 import { ContactSection } from './components/home/ContactSection';
 
 // About
-import { AboutHero, MyStory, HowIGotHere, SkillsExpertise, ToolsProcess, AboutContact } from './components/about/index';
+import { AboutHero, HowIGotHere, SkillsExpertise, ToolsProcess, AboutContact } from './components/about/index';
 
 // Shared
 import { CinematicClosing } from './components/shared/CinematicClosing';
@@ -85,7 +85,7 @@ export default function App() {
                         element={
                             <>
                                 <AboutHero />
-                                <MyStory />
+
                                 <HowIGotHere />
                                 <SkillsExpertise />
                                 <ToolsProcess />
