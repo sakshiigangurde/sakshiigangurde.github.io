@@ -39,19 +39,18 @@ export function ContactSection() {
                     transition={{ duration: 0.7 }}
                     className="mb-16"
                 >
-                    <span className="text-xs uppercase tracking-[0.3em] text-violet-400/70 mb-4 block font-semibold">
+                    <span className="text-xs uppercase tracking-[0.4em] text-violet-400/70 mb-4 block font-medium">
                         Get In Touch
                     </span>
                     <h2 className="text-5xl md:text-6xl lg:text-8xl font-bold text-white leading-tight mb-7">
-                        Let's{' '}
-                        <span className="bg-gradient-to-r from-teal-400 via-cyan-400 to-blue-400 bg-clip-text text-transparent">
+                        Let's <span className="bg-gradient-to-r from-teal-400 via-cyan-400 to-blue-400 bg-clip-text text-transparent">
                             Create
                         </span>
                         <br />
                         Something Great
                     </h2>
-                    <p className="text-xl text-gray-400 max-w-2xl mx-auto leading-relaxed">
-                        I'm currently open to new opportunities and collaborations. Let's talk about your next project.
+                    <p className="text-xl text-gray-400 max-w-3xl mx-auto leading-relaxed">
+                        I'm currently open to new opportunities and collaborations.<br className="hidden sm:block" /> Let's talk about your next project.
                     </p>
                 </motion.div>
 

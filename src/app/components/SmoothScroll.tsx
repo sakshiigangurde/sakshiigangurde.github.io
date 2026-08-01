@@ -12,12 +12,12 @@ export default function SmoothScroll() {
             smoothWheel: true,
         });
 
-        // @ts-ignore - Expose lenis globally for ScrollToTop
+        // @ts-expect-error - Expose lenis globally for ScrollToTop
         window.lenis = lenis;
 
         return () => {
             lenis.destroy();
-            // @ts-ignore
+            // @ts-expect-error - No type definitions available for lenis on window
             delete window.lenis;
         };
     }, []);

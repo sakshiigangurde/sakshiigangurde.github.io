@@ -2,11 +2,14 @@ import { Routes, Route } from 'react-router-dom';
 import { Navigation } from './components/Navigation';
 import ScrollToTop from './components/ScrollToTop';
 import SmoothScroll from './components/SmoothScroll';
+import { LayoutGroup } from 'motion/react';
 
 // Home
-import { HomeHero } from './components/home/HomeHero';
-import { FeaturedWork } from './components/home/FeaturedWork';
-import { ContactSection } from './components/home/ContactSection';
+import HeroAndCaseStudies from './components/home/HeroAndCaseStudies';
+import Process from './components/home/Process';
+import About from './components/home/About';
+import LifeOutside from './components/home/LifeOutside';
+import Footer from './components/home/Footer';
 
 // About
 import { AboutHero, HowIGotHere, SkillsExpertise, ToolsProcess, AboutContact } from './components/about/index';
@@ -15,27 +18,27 @@ import { AboutHero, HowIGotHere, SkillsExpertise, ToolsProcess, AboutContact } f
 import { CinematicClosing } from './components/shared/CinematicClosing';
 
 // Project 1 — LittleNest Booking
-import { CinematicHero } from './components/cinematic/CinematicHero';
-import { VisualProblem } from './components/cinematic/VisualProblem';
-import { DesignVision } from './components/cinematic/DesignVision';
-import { BrandWorld } from './components/cinematic/BrandWorld';
-import { UserFlow } from './components/cinematic/UserFlow';
-import { DesignEvolution } from './components/cinematic/DesignEvolution';
-import { UIShowcase } from './components/cinematic/UIShowcase';
-import { Impact } from './components/cinematic/Impact';
+import { CinematicHero } from './components/littlenest-booking/CinematicHero';
+import { VisualProblem } from './components/littlenest-booking/VisualProblem';
+import { DesignVision } from './components/littlenest-booking/DesignVision';
+import { BrandWorld } from './components/littlenest-booking/BrandWorld';
+import { UserFlow } from './components/littlenest-booking/UserFlow';
+import { DesignEvolution } from './components/littlenest-booking/DesignEvolution';
+import { UIShowcase } from './components/littlenest-booking/UIShowcase';
+import { Impact } from './components/littlenest-booking/Impact';
 
 // Project 2 — LittleNest Evolution
-import { CinematicHero2 } from './components/cinematic2/CinematicHero2';
-import { Context } from './components/cinematic2/Context';
-import { UserFeedback } from './components/cinematic2/UserFeedback';
-import { ExistingFlow } from './components/cinematic2/ExistingFlow';
-import { Solutions } from './components/cinematic2/Solutions';
-import { BeforeAfter } from './components/cinematic2/BeforeAfter';
-import { Outcome2 } from './components/cinematic2/Outcome2';
-import { Learnings } from './components/cinematic2/Learnings';
+import { CinematicHero2 } from './components/littlenest-evolution/CinematicHero2';
+import { Context } from './components/littlenest-evolution/Context';
+import { UserFeedback } from './components/littlenest-evolution/UserFeedback';
+import { ExistingFlow } from './components/littlenest-evolution/ExistingFlow';
+import { Solutions } from './components/littlenest-evolution/Solutions';
+import { BeforeAfter } from './components/littlenest-evolution/BeforeAfter';
+import { Outcome2 } from './components/littlenest-evolution/Outcome2';
+import { Learnings } from './components/littlenest-evolution/Learnings';
 
 // Project 3 — JioBusiness
-import { CinematicHero3 } from './components/cinematic3/CinematicHero3';
+import { CinematicHero3 } from './components/jiobusiness/CinematicHero3';
 import {
     PlatformContext,
     ProblemStatement3,
@@ -44,10 +47,10 @@ import {
     BeforeAfter3,
     Outcome3,
     Learnings3,
-} from './components/cinematic3/CinematicSections3';
+} from './components/jiobusiness/CinematicSections3';
 
 // Project 4 — Child Development System
-import { CinematicHero4 } from './components/cinematic4/CinematicHero4';
+import { CinematicHero4 } from './components/child-development/CinematicHero4';
 import {
     IntroductionVision,
     ProblemSpace,
@@ -55,29 +58,42 @@ import {
     DesignProcess4,
     Outcome4,
     Reflections4,
-} from './components/cinematic4';
+} from './components/child-development';
+// Digital Purchase Journey
+import {
+    Hero,
+    OfflineToOnline,
+    ProblemStatement,
+    MyRole as DigitalPurchaseMyRole,
+    DesignProcess,
+    UIShowcase as DigitalPurchaseUIShowcase,
+    Reflections
+} from './components/digital-purchase';
 
 export default function App() {
     return (
-        <div className="relative min-h-screen bg-[#0e0e0e] text-white">
-            <ScrollToTop />
-            <SmoothScroll />
-            <Navigation />
+        <LayoutGroup>
+            <div className="relative min-h-screen bg-[#0e0e0e] text-white overflow-x-hidden w-full">
+                <ScrollToTop />
+                <SmoothScroll />
+                <Navigation />
 
-            {/* Add top padding to clear floating nav */}
-            <div className="relative pt-20">
-                <Routes>
-                    {/* ─── Home ───────────────────────────────── */}
-                    <Route
-                        path="/"
-                        element={
-                            <>
-                                <HomeHero onViewWork={() => document.getElementById('work')?.scrollIntoView({ behavior: 'smooth' })} />
-                                <FeaturedWork />
-                                <ContactSection />
-                            </>
-                        }
-                    />
+                {/* Add top padding to clear floating nav */}
+                <div className="relative pt-20">
+                    <Routes>
+                        {/* ─── Home ───────────────────────────────── */}
+                        <Route
+                            path="/"
+                            element={
+                                <>
+                                    <HeroAndCaseStudies />
+                                    <Process />
+                                    <About />
+                                    <LifeOutside />
+                                    <Footer />
+                                </>
+                            }
+                        />
 
                     {/* ─── About ──────────────────────────────── */}
                     <Route
@@ -107,7 +123,7 @@ export default function App() {
                                 <DesignEvolution />
                                 <UIShowcase />
                                 <Impact />
-                                <CinematicClosing nextProjectLink="/case-study/littlenest-evolution" />
+                                <CinematicClosing nextProjectLink="/case-study/child-development" />
                             </>
                         }
                     />
@@ -143,7 +159,24 @@ export default function App() {
                                 <BeforeAfter3 />
                                 <Outcome3 />
                                 <Learnings3 />
-                                <CinematicClosing nextProjectLink="/case-study/child-development" />
+                                <CinematicClosing nextProjectLink="/case-study/digital-purchase" />
+                            </>
+                        }
+                    />
+
+                    {/* ─── Digital Purchase Journey ─────────────── */}
+                    <Route
+                        path="/case-study/digital-purchase"
+                        element={
+                            <>
+                                <Hero />
+                                <OfflineToOnline />
+                                <ProblemStatement />
+                                <DigitalPurchaseMyRole />
+                                <DesignProcess />
+                                <DigitalPurchaseUIShowcase />
+                                <Reflections />
+                                <CinematicClosing nextProjectLink="/case-study/littlenest-booking" />
                             </>
                         }
                     />
@@ -167,5 +200,6 @@ export default function App() {
                 </Routes>
             </div>
         </div>
+        </LayoutGroup>
     );
 }

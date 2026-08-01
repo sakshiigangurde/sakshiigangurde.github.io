@@ -50,7 +50,7 @@ export function CinematicHero() {
                 >
                     <div className="absolute inset-0 bg-gradient-to-t from-sky-400/30 via-pink-300/15 to-yellow-300/15 blur-3xl scale-110" />
                     <img
-                        src={publicUrl('/images/littlenest-booking-hero-mockup.png')}
+                        src={publicUrl('/images/heroes/littlenest-booking-hero-mockup.png')}
                         alt="LittleNest App Welcome Screen"
                         className="relative w-full h-auto z-10 drop-shadow-2xl"
                     />

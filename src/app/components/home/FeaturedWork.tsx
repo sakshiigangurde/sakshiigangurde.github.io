@@ -31,7 +31,7 @@ const PROJECTS: Project[] = [
         borderColor: 'border-blue-500/20',
         hoverBorderColor: 'hover:border-blue-400/50',
         slug: 'jiobusiness',
-        image: publicUrl('/images/jiobusiness.png'),
+        image: publicUrl('/images/case-studies/jiobusiness.png'),
     },
     {
         number: '02',
@@ -45,7 +45,7 @@ const PROJECTS: Project[] = [
         borderColor: 'border-teal-500/20',
         hoverBorderColor: 'hover:border-teal-400/50',
         slug: 'littlenest-booking',
-        image: publicUrl('/images/littlenest-booking.png'),
+        image: publicUrl('/images/case-studies/littlenest-booking.png'),
     },
     {
         number: '03',
@@ -59,7 +59,7 @@ const PROJECTS: Project[] = [
         borderColor: 'border-green-500/20',
         hoverBorderColor: 'hover:border-green-400/50',
         slug: 'littlenest-evolution',
-        image: publicUrl('/images/littlenest-evolution.png'),
+        image: publicUrl('/images/case-studies/littlenest-evolution.png'),
     },
     {
         number: '04',
@@ -73,7 +73,7 @@ const PROJECTS: Project[] = [
         borderColor: 'border-green-500/20',
         hoverBorderColor: 'hover:border-green-400/50',
         slug: 'child-development',
-        image: publicUrl('/images/child-development.png'),
+        image: publicUrl('/images/case-studies/child-development.png'),
     },
 ];
 
@@ -96,7 +96,7 @@ export function FeaturedWork() {
                     transition={{ duration: 0.7 }}
                     className="mb-20"
                 >
-                    <span className="text-xs uppercase tracking-[0.3em] text-teal-400/70 mb-4 block font-semibold">
+                    <span className="text-xs uppercase tracking-[0.4em] text-teal-400/70 mb-4 block font-medium">
                         Featured Work
                     </span>
                     <h2 className="text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-tight">

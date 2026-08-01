@@ -50,7 +50,7 @@ export function AboutHero() {
                         <div className="relative p-[3px] rounded-[2.5rem] bg-gradient-to-br from-violet-500 via-pink-500 to-blue-500 shadow-2xl shadow-violet-500/20">
                             <div className="rounded-[2.4rem] overflow-hidden w-full max-w-[420px] aspect-square bg-[#0e0e0e]">
                                 <img
-                                    src={publicUrl('/images/sakshi-profile.jpg')}
+                                    src={publicUrl('/images/about/sakshi-profile.jpg')}
                                     alt="Sakshi — UI/UX Designer"
                                     className="w-full h-full object-cover object-top"
                                 />
