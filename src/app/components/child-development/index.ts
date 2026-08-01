@@ -1,4 +1,4 @@
-export { CinematicHero4 } from './CinematicHero4';
+
 export { IntroductionVision } from './IntroductionVision';
 export { ProblemSpace } from './ProblemSpace';
 export { MyRole } from './MyRole';

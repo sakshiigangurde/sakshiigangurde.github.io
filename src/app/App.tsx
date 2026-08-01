@@ -70,6 +70,8 @@ import {
     Reflections
 } from './components/digital-purchase';
 
+import NotFound from './components/NotFound';
+
 export default function App() {
     return (
         <LayoutGroup>
@@ -197,6 +199,8 @@ export default function App() {
                             </>
                         }
                     />
+                    {/* ─── 404 Not Found ────────── */}
+                    <Route path="*" element={<NotFound />} />
                 </Routes>
             </div>
         </div>
