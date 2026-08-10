@@ -38,64 +38,17 @@ export function HowIGotHere() {
                         viewport={{ once: true, margin: '-50px' }}
                         transition={{ duration: 0.6 }}
                     >
-                        My journey into design didn’t start with design—it started with engineering.
-                        While studying engineering, I was always drawn to the creative side of problem-solving—how
-                        things work, but more importantly, how they feel to use. Over time, this curiosity pulled
-                        me toward design, where I could combine logic with creativity to build more human-centered
-                        experiences.
+                        My journey into design didn’t start with design, it started with engineering. While studying engineering, I was always drawn to the creative side of problem-solving, how things work, but more importantly, how they feel to use. Over time, this curiosity pulled me toward design, where I could combine logic with creativity to build more human-centered experiences.
                     </motion.p>
 
-                    {/* Paragraph 3 */}
+                    {/* Paragraph 2 */}
                     <motion.p
                         initial={{ opacity: 0, y: 15 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true, margin: '-50px' }}
                         transition={{ duration: 0.6, delay: 0.2 }}
                     >
-                        What began as an exploration soon became a clear direction:{' '}
-                        <span className="block mt-2 font-bold bg-gradient-to-r from-violet-400 via-pink-400 to-blue-400 bg-clip-text text-transparent">
-                            to make technology more intuitive, meaningful, and human.
-                        </span>
-                    </motion.p>
-
-                    {/* Paragraph 4 */}
-                    <motion.p
-                        initial={{ opacity: 0, y: 15 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true, margin: '-50px' }}
-                        transition={{ duration: 0.6 }}
-                    >
-                        Over the past few years, I’ve worked on a range of products—from{' '}
-                        <span className="text-blue-400 font-semibold">enterprise platforms and admin portals</span>{' '}
-                        that help businesses make better decisions, to{' '}
-                        <span className="text-teal-400 font-semibold">consumer applications</span> designed for
-                        parents and children. These experiences have helped me understand how to design for both
-                        complex systems and everyday users, balancing functionality with simplicity.
-                    </motion.p>
-
-                    {/* Paragraph 5 */}
-                    <motion.p
-                        initial={{ opacity: 0, y: 15 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true, margin: '-50px' }}
-                        transition={{ duration: 0.6, delay: 0.1 }}
-                    >
-                        When I’m not designing, I enjoy exploring new tools and pushing my workflow further.
-                        Recently, I’ve been actively experimenting with{' '}
-                        <span className="text-pink-400 font-semibold">AI in design</span>—using it to speed up ideation,
-                        improve prototyping, and enhance the overall quality of my work. I’m always looking for
-                        ways to work smarter, iterate faster, and deliver more thoughtful experiences.
-                    </motion.p>
-
-                    {/* Paragraph 6 */}
-                    <motion.p
-                        initial={{ opacity: 0, y: 15 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true, margin: '-50px' }}
-                        transition={{ duration: 0.6, delay: 0.2 }}
-                    >
-                        I’m currently exploring opportunities where I can contribute to meaningful products,
-                        collaborate with talented teams, and continue growing as a designer.
+                        Over the past few years, I’ve worked on a range of products, from enterprise platforms and admin portals that help businesses make better decisions, to consumer applications designed for parents and children. These experiences have helped me understand how to design for both complex systems and everyday users, balancing functionality with simplicity.
                     </motion.p>
                 </div>
             </div>
