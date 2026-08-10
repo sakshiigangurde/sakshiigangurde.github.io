@@ -69,7 +69,7 @@ const CaseStudyCard = ({ isDesktop, path, image, title, subtitle, tags, index, z
 export default function HeroAndCaseStudies() {
   const containerRef = useRef<HTMLDivElement>(null);
   const navigate = useNavigate();
-  
+
   const [isDesktop, setIsDesktop] = useState(
     typeof window !== 'undefined' ? window.innerWidth >= 1280 : true
   );
@@ -91,24 +91,28 @@ export default function HeroAndCaseStudies() {
   const rangeTop = [0, 1000];
   const rangeBottom = [0, 1000];
 
+  // Create progress values from 1 (stack) to 0 (grid) for calculating dynamic Y offsets
+  const progressTop = useTransform(scrollY, rangeTop, [1, 0]);
+  const progressBottom = useTransform(scrollY, rangeBottom, [1, 0]);
+
   // Card 1: JioBusiness (Top-Left) -> Top/Front in stack
   const card1X = useTransform(scrollY, rangeTop, [`100%`, "0%"]);
-  const card1Y = useTransform(scrollY, rangeTop, [`-120vh`, "0vh"]);
+  const card1Y = useTransform(progressTop, p => `calc(${p * -100}vh - ${p * 106}px)`);
   const card1R = useTransform(scrollY, rangeTop, [5, 0]);
 
   // Card 2: Digital Purchase (Top-Right) -> 2nd in stack
   const card2X = useTransform(scrollY, rangeTop, [`2%`, "0%"]);
-  const card2Y = useTransform(scrollY, rangeTop, [`-116vh`, "0vh"]);
+  const card2Y = useTransform(progressTop, p => `calc(${p * -100}vh - ${p * 66}px)`);
   const card2R = useTransform(scrollY, rangeTop, [-3, 0]);
 
   // Card 3: LittleNest Booking (Bottom-Left) -> 3rd in stack
   const card3X = useTransform(scrollY, rangeBottom, [`98%`, "0%"]);
-  const card3Y = useTransform(scrollY, rangeBottom, [`-190vh`, "0vh"]);
+  const card3Y = useTransform(progressBottom, p => `calc(${p * -100}vh - ${p * 740}px)`);
   const card3R = useTransform(scrollY, rangeBottom, [4, 0]);
 
   // Card 4: LittleNest Growth (Bottom-Right) -> Bottom in stack
   const card4X = useTransform(scrollY, rangeBottom, [`4%`, "0%"]);
-  const card4Y = useTransform(scrollY, rangeBottom, [`-194vh`, "0vh"]);
+  const card4Y = useTransform(progressBottom, p => `calc(${p * -100}vh - ${p * 780}px)`);
   const card4R = useTransform(scrollY, rangeBottom, [-7, 0]);
 
   // Reduced initial scale (0.7) so they start smaller in the Hero stack
@@ -118,17 +122,17 @@ export default function HeroAndCaseStudies() {
   // Fade text in as the cards settle into their final spots
   const textOpacityTop = useTransform(scrollY, [700, 1000], [0, 1]);
   const textOpacityBottom = useTransform(scrollY, [700, 1000], [0, 1]);
-  
+
   const textYTop = useTransform(scrollY, [700, 1000], [20, 0]);
   const textYBottom = useTransform(scrollY, [700, 1000], [20, 0]);
-  
+
   const headingOpacity = useTransform(scrollY, [300, 600], [0, 1]);
   const headingY = useTransform(scrollY, [300, 600], [40, 0]);
 
   return (
     <div ref={containerRef} className="relative w-full overflow-x-hidden">
       {/* --- HERO SECTION --- */}
-      <section className="relative flex flex-col xl:flex-row items-center justify-between gap-8 xl:gap-12 pt-24 pb-24 xl:py-20 px-4 md:px-8 xl:px-12 max-w-[1600px] mx-auto xl:min-h-screen z-10">
+      <section className="relative flex flex-col xl:flex-row items-center justify-center xl:justify-between gap-8 xl:gap-12 pt-24 pb-24 xl:py-20 px-4 md:px-8 xl:px-12 max-w-[1600px] mx-auto min-h-screen z-10">
         {/* Background Gradients */}
         <div className="absolute inset-0 pointer-events-none -z-20 flex justify-center items-center">
           <div className="absolute top-1/4 left-1/4 w-[500px] h-[500px] bg-teal-500/10 rounded-full blur-[120px]" />
@@ -136,9 +140,9 @@ export default function HeroAndCaseStudies() {
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-violet-500/5 rounded-full blur-[150px]" />
         </div>
 
-        <div className="flex-1 space-y-8 relative z-10">
+        <div className="flex-1 flex flex-col justify-center space-y-8 relative z-10">
           <div className="absolute -left-20 top-20 w-[600px] h-[600px] bg-gradient-to-r from-cyan-500/20 via-blue-500/20 to-purple-500/20 blur-[100px] rounded-full -z-10 pointer-events-none" />
-          
+
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
@@ -153,8 +157,8 @@ export default function HeroAndCaseStudies() {
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#0ce6f2] to-blue-500">That Matter</span>
             </h1>
           </motion.div>
-          
-          <motion.p 
+
+          <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
@@ -162,18 +166,29 @@ export default function HeroAndCaseStudies() {
           >
             Product Designer with 5+ years of experience designing enterprise platforms, consumer apps, and premium digital experiences at Reliance Jio.
           </motion.p>
-          
-          <motion.button 
+
+          <motion.button
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
-            className="bg-gradient-to-r from-[#0ce6f2] to-[#a855f7] text-white font-bold px-8 py-4 rounded-full flex items-center gap-2 hover:opacity-90 transition-all hover:scale-105 active:scale-95 shadow-lg shadow-purple-500/20 mt-4"
+            onClick={() => {
+              const lenis = (window as any).lenis;
+              if (lenis) {
+                lenis.scrollTo('#case-studies', { duration: 2.5 });
+              } else {
+                const element = document.getElementById('case-studies');
+                if (element) {
+                  element.scrollIntoView({ behavior: 'smooth' });
+                }
+              }
+            }}
+            className="w-fit bg-gradient-to-r from-[#0ce6f2] to-[#a855f7] text-white font-bold px-8 py-4 rounded-full flex items-center gap-2 hover:opacity-90 transition-all hover:scale-105 active:scale-95 shadow-lg shadow-purple-500/20 mt-4"
           >
             View My Work
             <ArrowDown className="w-5 h-5" />
           </motion.button>
-          
-          <motion.div 
+
+          <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
@@ -193,15 +208,15 @@ export default function HeroAndCaseStudies() {
             </div>
           </motion.div>
         </div>
-        
+
         {/* Placeholder for the images in the Hero section (just to take up space on the right) */}
         <div className="hidden xl:flex flex-1 relative w-full aspect-[4/3] md:aspect-auto md:h-[600px] items-center justify-center mt-12 xl:mt-0 z-10 pointer-events-none">
-           {/* The actual images are rendered in the grid below and translated UP to this spot! */}
+          {/* The actual images are rendered in the grid below and translated UP to this spot! */}
         </div>
       </section>
 
       {/* --- CASE STUDIES SECTION --- */}
-      <section className="py-24 px-4 md:px-8 xl:px-12 max-w-[1600px] mx-auto min-h-screen relative z-20">
+      <section id="case-studies" className="py-24 px-4 md:px-8 xl:px-12 max-w-[1600px] mx-auto min-h-screen relative z-20">
         {isDesktop ? (
           <motion.div style={{ opacity: headingOpacity, y: headingY }} className="mb-16">
             <p className="text-sm font-medium tracking-[0.4em] text-[#00d9b4] mb-4 uppercase">FEATURED WORK</p>
@@ -220,28 +235,28 @@ export default function HeroAndCaseStudies() {
 
         {/* The Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-16">
-          <CaseStudyCard 
+          <CaseStudyCard
             isDesktop={isDesktop} navigate={navigate}
             title="JioBusiness" subtitle="Enterprise Dashboard Redesign" tags={["Enterprise UX", "Dashboard Design", "B2B", "Data Visualization"]}
             image="/images/heroes/jiobusiness-hero.png" path="/case-study/jiobusiness"
             index={1} zIndexClass="z-40"
             x={card1X} y={card1Y} rotate={card1R} scale={cardScaleTop} textOpacity={textOpacityTop} textY={textYTop}
           />
-          <CaseStudyCard 
+          <CaseStudyCard
             isDesktop={isDesktop} navigate={navigate}
             title="Digital Purchase Journey" subtitle="From Assisted Sales to Self-Service" tags={["Enterprise UX", "Dashboard Design", "B2B", "Data Visualization"]}
             image="/images/heroes/digital-purchase-hero.png" path="/case-study/digital-purchase"
             index={2} zIndexClass="z-30"
             x={card2X} y={card2Y} rotate={card2R} scale={cardScaleTop} textOpacity={textOpacityTop} textY={textYTop}
           />
-          <CaseStudyCard 
+          <CaseStudyCard
             isDesktop={isDesktop} navigate={navigate}
             title="LittleNest" subtitle="End-to-End Booking Experience" tags={["Enterprise UX", "Dashboard Design", "B2B", "Data Visualization"]}
             image="/images/heroes/littlenest-booking-hero-new.png" path="/case-study/littlenest-booking"
             index={3} zIndexClass="z-20"
             x={card3X} y={card3Y} rotate={card3R} scale={cardScaleBottom} textOpacity={textOpacityBottom} textY={textYBottom}
           />
-          <CaseStudyCard 
+          <CaseStudyCard
             isDesktop={isDesktop} navigate={navigate}
             title="LittleNest" subtitle="Child Growth Experience" tags={["Enterprise UX", "Dashboard Design", "B2B", "Data Visualization"]}
             image="/images/heroes/littlenest-growth-hero.png" path="/case-study/child-development"
